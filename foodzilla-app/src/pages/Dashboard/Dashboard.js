@@ -40,7 +40,7 @@ function Dashboard() {
                 <Container>
                     <Col md="3">
                         <h3></h3>
-                        <Card>
+                        <Card className='title'>
                             <Card.Body>
                                 <Card.Text>
                                     <br /><br /><br /><br /><br /><br />
