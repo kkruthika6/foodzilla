@@ -118,6 +118,7 @@ const OwnerLogin = () => {
                     <span>Email</span>
                     <input type="email" id="loginEmail" />
                 </label>
+                <br />
                 <label>
                     <span>Password</span>
                     <input type="password" id="loginPw" />
