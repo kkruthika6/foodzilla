@@ -42,63 +42,101 @@ function Recipes() {
                     <Link to='/dashboard'>Dashboard</Link>
                 </nav>
             </header>
-        <div className='container'>
-            <Container>
-                <Col md="3">
-                    <h3></h3>
-                    <Card className='title'>
-                        <Card.Body>
-                            <Card.Text>
-                                <br /><br /><br /><br /><br /><br />
-                                <h2>Tasty Recipes</h2>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col md="11">
-                    <h3></h3>
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Check the recipes!</Card.Title>
-                            <Card.Text>
-                                <div className='feed'>
-                                {flag === false ? <div className='loader'><Spinner animation="border" variant="dark" /></div> :
-                                data !== undefined && data.length !== 0 ?
-                                    data.map((d) => {
-                                        return (
-                                            <>
-                                                <Col md='12'>
-                                                    <Card className="card">
-                                                        <Card.Header>{d.name}<br /></Card.Header>
-                                                        <Card.Body>
-                                                            <Card.Text>
-                                                                {d.yields}
-                                                                <br />
-                                                                {d.description}
-                                                            </Card.Text>
-                                                        </Card.Body>
-                                                    </Card>
-                                                </Col>
-                                                <br />
-                                            </>
-                                        )
-                                    })
-                                    : null}
+            <div className='container'>
+                <Container>
+                    <Col md="3">
+                        <h3></h3>
+                        <Card className='title'>
+                            <Card.Body>
+                                <Card.Text>
+                                    <br /><br /><br /><br /><br /><br />
+                                    <h2>Tasty Recipes</h2>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col md="11">
+                        <h3></h3>
+                        <Card>
+                            <Card.Body>
+                                <Card.Title>Check the recipes!</Card.Title>
+                                <Card.Text>
+                                    <div className='feed'>
+                                        {flag === false ? <div className='loader'><Spinner animation="border" variant="dark" /></div> :
+                                            data !== undefined && data.length !== 0 ?
+                                                data.map((d) => {
+                                                    return (
+                                                        <>
+                                                            <Col md='12'>
+                                                                <Card className="card">
+                                                                    <Card.Header>{d.name}<br /></Card.Header>
+                                                                    <Card.Body>
+                                                                        <Card.Text>
+                                                                            <>
+                                                                                {d.recipes ?
+                                                                                    d.recipes.map(r => 
+                                                                                        {return(
+                                                                                            <>
+                                                                                            {r.name}<br />
+                                                                                            {r.description}
+                                                                                            <br />
+                                                                                            <img src={r.thumbnail_url} alt={r.thumbnail_alt_text} width="500px" height="300px" />
+                                                                                            <br />
+                                                                                            {r.prep_time_minutes ? "Preparation time:" + r.prep_time_minutes : null}
+                                                                                            <br />
+                                                                                            {r.yields}
+                                                                                            <br /><br />
+                                                                                            {r.instructions ? "Instructions:" : null}
+                                                                                            <ol>
+                                                                                                {r.instructions?.map((i) => { return (<li style={{ color: "black", textAlign: "left" }}>{i.display_text}<br /></li>) })}
+                                                                                            </ol>
+                                                                                            {r.user_ratings ? r.user_ratings.score !== null ? "User Rating: " + (r.user_ratings.score * 100) + '%' : null : null}
+                                                                                            <br/>
+                                                                                            </>
+                                                                                            )}
+                                                                                    ) : (<>
+                                                                                        {d.description}
+                                                                                        <br />
+                                                                                        <img src={d.thumbnail_url} alt={d.thumbnail_alt_text} width="500px" height="300px" />
+                                                                                        <br />
+                                                                                        {d.prep_time_minutes ? "Preparation time:" + d.prep_time_minutes : null}
+                                                                                        <br />
+                                                                                        {d.yields}
+                                                                                        <br /><br />
+                                                                                        {d.instructions ? "Instructions:" : null}
+                                                                                        <ol>
+                                                                                            {d.instructions?.map((i) => { return (<li style={{ color: "black", textAlign: "left" }}>{i.display_text}<br /></li>) })}
+                                                                                            <br />
+                                                                                        </ol>
+                                                                                        <br/>
+                                                                                        {d.user_ratings ? d.user_ratings.score !== null ? "User Rating: " + (d.user_ratings.score * 100) + '%' : null : null}
+                                                                                        <br/>
+                                                                                    </>)
+                                                                                }</>
+                                                                        </Card.Text>
+                                                                    </Card.Body>
+                                                                </Card>
+                                                            </Col>
+                                                            <br />
+                                                        </>
+                                                    )
+                                                })
+                                                : null}
                                     </div>
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                </Col>
-            </Container>
-        </div>
-        <footer>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Container>
+            </div>
+            <footer>
                 <ul>
                     <li>Tel: <a href="telto:(617)-922 2434">(617)-922 2434</a></li>
                     <li>Address: Boston, MA</li>
                     <li>Mail to: <a href="mailto:enquire@foodzilla.com">enquire@foodzilla.com</a></li>
                 </ul>
             </footer>
-    </>
+        </>
     );
 }
 
