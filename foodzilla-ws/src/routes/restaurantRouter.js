@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({path:path.join(__dirname,'..','..','.env')});
 
 const express = require('express');
 const router = express.Router();
@@ -11,8 +12,8 @@ let multer = require("multer");
 const bucketName = "foodzilla";
 
 const awsConfig = {
-    accessKeyId: "AKIAZNFNV6NNZKETFUGJ",
-    secretAccessKey: "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",
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     region: "us-east-1",
 };
 

@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
+const myConfig = require('../config');
+
 const Schema = mongoose.Schema;
 
-const URL = 'mongodb+srv://MongoDb:mongodb123@foodzilla.bvmacmd.mongodb.net/FoodZilla?retryWrites=true&w=majority';
+const URL = myConfig.url;
 
 let connection = {};
 

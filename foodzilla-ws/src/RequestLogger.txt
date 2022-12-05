@@ -60,3 +60,7 @@ Mon Dec 05 2022 16:43:54 GMT-0500 (Eastern Standard Time) POST /restaurant/addRe
 Mon Dec 05 2022 16:54:16 GMT-0500 (Eastern Standard Time) POST /restaurant/addRestaurant
 Mon Dec 05 2022 16:55:47 GMT-0500 (Eastern Standard Time) POST /restaurant/addRestaurant
 Mon Dec 05 2022 16:56:42 GMT-0500 (Eastern Standard Time) POST /restaurant/addRestaurant
+Mon Dec 05 2022 17:24:45 GMT-0500 (Eastern Standard Time) POST /restaurant/addRestaurant
+Mon Dec 05 2022 17:25:58 GMT-0500 (Eastern Standard Time) POST /restaurant/addRestaurant
+Mon Dec 05 2022 17:27:31 GMT-0500 (Eastern Standard Time) GET /restaurant/getRestaurants
+Mon Dec 05 2022 17:38:42 GMT-0500 (Eastern Standard Time) GET /restaurant/getRestaurants
