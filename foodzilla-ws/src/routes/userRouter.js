@@ -1,101 +1,162 @@
 const express = require('express');
-const router = express.Router();
+const userRouter = express.Router();
 const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken");
 
-const userService = require('../service/userService');
-const User = require('../model/User')
-const validator = require('../utilities/Validator');
+const expressAsyncHandler = require('express-async-handler');
 
-router.post('/create', async (req, res, next) => {
+const User = require('../models/User');
+const Address = require('../models/Address');
 
-    try {
-        validator.validateFirstName(req.body.name);
-        validator.validateLastName(req.body.name);
-        validator.validateEmailId(req.body.emailId);
-        validator.validatePassword(req.body.password);
-        validator.validateRole(req.body.role);
-
-        let salt = await bcrypt.genSalt(15);
-        let hash = await bcrypt.hash(req.body.password, salt);
-
-        req.body.password = hash;
-
-        const user = new User(req.body);
-
-        userService.createUser(user).then(result => {
-            if (result != null)
-                res.json("User created Successfully");
-        }).catch(err => next(err));
+const genrateToken =(user)=>{
+    return jwt.sign({
+        _id:user._id,
+        name:user.name,
+        email:user.email,
+        isAdmin:user.isAdmin,
+    },'FoodZilla',{
+        expiresIn:'30d',
+    })
+}
+const isAuth=(req,res,next)=>{
+    const authorization=req.headers.authorization
+   
+    if(authorization){
+      const token = authorization.slice(7,authorization.length) //bearer token value
+      jwt.verify(token,'FoodZilla',(err,decode)=>{
+          if(err){
+              res.status(401).send({message:err.message})
+          }
+          else{
+              req.user=decode
+              next()
+          }
+      })
     }
-    catch (err) {
-        next(err);
+    else{
+        res.status(401).send({message:'No token'})
+
     }
+}
 
-});
+// post request for signining users
+userRouter.post('/signin', expressAsyncHandler(async (req, res) => {
+    const user = await User.findOne({ email: req.body.email })
+    if (user) {
+        if (bcrypt.compareSync(req.body.password, user.password)) { // if password mateches
+            res.send({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                isAdmin: user.isAdmin,
+                mobNo: user?.mobNo,
+                token: genrateToken(user)
+            });
+            return;
+        }
+    }
+    res.status(401).send({ message: 'Invalid Email or Password' })
+})
+);
 
-//To login 
-router.post('/login', function (req, res, next) {
-    let emailId = req.body.emailId;
-    let password = req.body.password;
+//post route for signup
+userRouter.post('/signup', expressAsyncHandler(async (req, res) => {
+    const user = await User.findOne({ email: req.body.email })
+    if (user) {
+        res.status(401).send({ message: 'User already exits' })
 
-    userService.checkUser(emailId, password).then(result => {
-        res.json({ result, status: 200 })
-    }).catch(err => next(err));
-
-});
-
-router.put('/edit', async (req, res, next) => {
-
-    try {
-        let firstName = req.body.firstName;
-        let lastName = req.body.lastName;
-        let emailId = req.body.emailId;
-        let password = req.body.password;
-        let role = req.body.role;
-
-        validator.validateFirstName(firstName);
-        validator.validateLastName(lastName);
-        validator.validateEmailId(emailId);
-        validator.validatePassword(password);
-        validator.validateRole(role);
-
-        let salt = await bcrypt.genSalt(15);
-        let hash = await bcrypt.hash(req.body.password, salt);
-
-        password = hash;
-
-        userService.updateUser(firstName, lastName, emailId, password, role).then((result) => {
-            res.status(200);
-            res.json(`User ${result} updated successfully`);
-        }).catch((err) => {
-            next(err);
+    } else {
+        const newUser = User({
+            name: req.body.name,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10)
         });
-    }
-    catch (err) {
-        next(err);
-    }
-});
+        const user = await newUser.save();
+        res.send({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            token: genrateToken(user),
 
-router.delete('/delete', (req, res, next) => {
-    try {
-        let emailId = req.body.emailId;
-        validator.validateEmailId(emailId);
-
-        userService.deleteUser(emailId).then(result => {
-            res.status(200)
-            res.json(`User ${result} deleted successfully`);
-        }).catch(err => next(err));
+        })
     }
-    catch (err) {
-        next(err);
+
+})
+
+);
+
+userRouter.get('/shipping/:id', expressAsyncHandler(async (req, res) => {
+    const id = req.params.id
+    const address = await Address.find({ userId: id })
+    res.send(address)
+}))
+
+//delete address
+userRouter.delete('/address/:id', expressAsyncHandler(async (req, res) => {
+    await Address.deleteOne({ _id: req.params.id })
+    res.send({ id: req.params.id })
+}))
+
+//update address
+userRouter.put('/address/:id', isAuth, expressAsyncHandler(async (req, res) => {
+    const address = await Address.findById(req.params.id)
+
+    if (address) {
+        address.name = req.body.name;
+        address.mobNo = req.body.mobNo
+        address.pinCode = req.body.pinCode
+        address.address = req.body.address
+        address.town = req.body.town
+        address.state = req.body.state
+        address.city = req.body.city
+        const newAddress = await address.save()
+        res.send(newAddress)
     }
-});
+    else {
+        res.status(404).send({ message: 'Address not found !' })
+    }
+}))
 
-router.get('/getAll', (req, res, next) => {
-    userService.getAllUsers().then(result => {
-        res.status(200)
-        res.json(result);
-    }).catch(err => next(err));
-});
+//Add address
+userRouter.post('/address', expressAsyncHandler(async (req, res) => {
+    console.log(req.body)
+    const newAdress = Address({
+        name: req.body.name,
+        mobNo: req.body.mobNo,
+        pinCode: req.body.pinCode,
+        address: req.body.address,
+        town: req.body.town,
+        state: req.body.state,
+        city: req.body.city,
+        userId: req.body.userId
+    })
+    const address = await newAdress.save()
+    res.send(address)
 
-module.exports = router;
+}))
+
+//Update User
+userRouter.put('/updateProfile', isAuth, expressAsyncHandler(async (req, res) => {
+    const user = await User.findById(req.user._id)
+    if (user) {
+        user.name = req.body.name;
+        user.mobNo = req.body.mobNo
+        const updatedUser = await user.save()
+        res.send({
+            _id: user._id,
+            name: updatedUser.name,
+            email: updatedUser.email,
+            isAdmin: updatedUser.isAdmin,
+            mobNo: updatedUser.mobNo,
+            token: genrateToken(updatedUser),
+        })
+    }
+    else {
+        res.status(404).send({ message: 'User not found' })
+    }
+
+
+}))
+
+module.exports = userRouter;

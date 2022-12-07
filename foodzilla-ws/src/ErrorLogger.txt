@@ -293,3 +293,7 @@ Error: Restaurant already exists with this id
 Error: Could not connect to database
     at /Users/pavansomashekar/Desktop/Food Zilla Backend/foodzilla-ws/src/utilities/connection.js:79:19
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ReferenceError: jwt is not defined
+    at genrateToken (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/src/routes/userRouter.js:11:5)
+    at /Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/src/routes/userRouter.js:79:20
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

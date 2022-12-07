@@ -64,3 +64,14 @@ Mon Dec 05 2022 17:24:45 GMT-0500 (Eastern Standard Time) POST /restaurant/addRe
 Mon Dec 05 2022 17:25:58 GMT-0500 (Eastern Standard Time) POST /restaurant/addRestaurant
 Mon Dec 05 2022 17:27:31 GMT-0500 (Eastern Standard Time) GET /restaurant/getRestaurants
 Mon Dec 05 2022 17:38:42 GMT-0500 (Eastern Standard Time) GET /restaurant/getRestaurants
+Tue Dec 06 2022 19:35:06 GMT-0500 (Eastern Standard Time) POST /api/users/signup
+Tue Dec 06 2022 19:37:46 GMT-0500 (Eastern Standard Time) POST /api/users/signup
+Tue Dec 06 2022 19:39:14 GMT-0500 (Eastern Standard Time) POST /api/users/signin
+Tue Dec 06 2022 19:43:24 GMT-0500 (Eastern Standard Time) PUT /api/users/updateProfile
+Tue Dec 06 2022 19:44:28 GMT-0500 (Eastern Standard Time) PUT /api/users/updateProfile
+Tue Dec 06 2022 19:47:41 GMT-0500 (Eastern Standard Time) POST /api/users/address
+Tue Dec 06 2022 19:50:39 GMT-0500 (Eastern Standard Time) DELETE /api/users/address/638fe05ac9f8b25bff3e86be
+Tue Dec 06 2022 19:54:45 GMT-0500 (Eastern Standard Time) PUT /api/users/address/638fe05ac9f8b25bff3e86be
+Tue Dec 06 2022 20:03:35 GMT-0500 (Eastern Standard Time) GET /ws
+Tue Dec 06 2022 20:03:38 GMT-0500 (Eastern Standard Time) GET /ws
+Tue Dec 06 2022 20:05:12 GMT-0500 (Eastern Standard Time) GET /ws

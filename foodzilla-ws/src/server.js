@@ -1,24 +1,37 @@
 const express = require('express');
+const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const cors = require("cors");
 
-const userRouter = require('../src/routes/userRouter');
-const restaurantRouter = require('../src/routes/restaurantRouter');
+const myConfig = require('./config');
+
+const userRouter = require('./routes/userRouter');
 
 const requestLogger = require('./utilities/RequestLogger')
 const errorLogger = require('./utilities/ErrorLogger')
 
 const app = express();
 
+mongoose.Promise = global.Promise;
+
+const URL = myConfig.url;
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true }).then((database) => {
+    console.log("Connected to FoodZilla database");
+}).catch((error) => {
+    console.log(error.message);
+        let err = new Error("Could not connect to database");
+        err.status = 500;
+        throw err;
+})
+
+
 app.use(cors());
-app.use('/uploads', express.static('uploads'))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(requestLogger);
 
-app.use('/user', userRouter);
-app.use('/restaurant', restaurantRouter);
+app.use('/api/users', userRouter);
 
 app.use(function (req, res) {
     return res.status(404).send({message: "Route not found"});
