@@ -1,4 +1,20 @@
 .loader {
-    margin-left: 430px;
-    margin-top: 130px;
+    margin-left: 700px;
+    margin-top: 180px;
+}
+
+.recipes {
+    height: 100%;
+    margin-left: 120px;
+    padding: 5px;
+    width: 90%;
+  }
+
+
+.recipefeed{
+    overflow: scroll;
+  }
+
+.foodimg {
+    margin-left: 300px;
 }
