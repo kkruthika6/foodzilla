@@ -28,15 +28,6 @@ function Dashboard() {
 
     return (
         <>
-            <header>
-                <h1>FoodZilla</h1>
-                <nav class="nav" id="myTopnav">
-                    <Link to='/mainpage'>Home</Link>
-                    <Link to='/restaurants'>Restaurants</Link>
-                    <Link to='/recipes'>Recipes</Link>
-                    <Link to='/dashboard'>Dashboard</Link>
-                </nav>
-            </header>
             <div class="container">
                 <Container>
                     <Col md="3">
@@ -79,13 +70,6 @@ function Dashboard() {
                     </Col>
                 </Container>
             </div>
-            <footer>
-                <ul>
-                    <li>Tel: <a href="telto:(617)-922 2434">(617)-922 2434</a></li>
-                    <li>Address: Boston, MA</li>
-                    <li>Mail to: <a href="mailto:enquire@foodzilla.com">enquire@foodzilla.com</a></li>
-                </ul>
-            </footer>
         </>
     )
 }
