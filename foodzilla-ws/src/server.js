@@ -6,6 +6,7 @@ const cors = require("cors");
 const myConfig = require('./config');
 
 const userRouter = require('./routes/userRouter');
+const productRouter = require('./routes/productRouter');
 
 const requestLogger = require('./utilities/RequestLogger')
 const errorLogger = require('./utilities/ErrorLogger')
@@ -32,6 +33,7 @@ app.use(bodyParser.json());
 app.use(requestLogger);
 
 app.use('/api/users', userRouter);
+app.use('/api/products',productRouter);
 
 app.use(function (req, res) {
     return res.status(404).send({message: "Route not found"});

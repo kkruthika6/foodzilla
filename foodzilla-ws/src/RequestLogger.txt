@@ -75,3 +75,4 @@ Tue Dec 06 2022 19:54:45 GMT-0500 (Eastern Standard Time) PUT /api/users/address
 Tue Dec 06 2022 20:03:35 GMT-0500 (Eastern Standard Time) GET /ws
 Tue Dec 06 2022 20:03:38 GMT-0500 (Eastern Standard Time) GET /ws
 Tue Dec 06 2022 20:05:12 GMT-0500 (Eastern Standard Time) GET /ws
+Wed Dec 07 2022 08:24:47 GMT-0500 (Eastern Standard Time) GET /api/products
