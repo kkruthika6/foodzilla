@@ -1,19 +1,17 @@
 body{
-    background-color: white !important;
-    background: linear-gradient(to bottom, #000000 -34%, #fefefe 100%);
-
-}
-
-header, footer{
-    color: white;
-    background-color:black;
-
+    background-color: rgb(212, 223, 238);
+    font-family: "cursive";
 }
 
 .feed{
-    height: 390px;
+    height: 470px;
     overflow: scroll;
 }
+
+.recipefeed{
+  overflow: scroll;
+}
+
 
 .feedtext {
     background-color: rgb(212, 223, 238);
@@ -21,28 +19,17 @@ header, footer{
     border-left: 8px solid black !important;
     border: 1px solid black;
 }
-.title{
-    background: linear-gradient(to bottom, rgb(212, 223, 238) -34%, #ffffff 153%);
+
+input{
+  width: 400px;
+  border: none;
+    border-bottom: 1px solid black;
+    margin-right: 50px;
 }
 
-.ft{
-    border: 1px solid black;
-    margin-right: 10px;
-}
-
-header{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 80px;
-}
-
- h1{
-    margin-left: 80px;
+ h2{
+    margin-left: 120px;
     height: 50px;
-    font-style: italic;
-    font-weight: bold;
 }
 
 .send {
@@ -56,12 +43,24 @@ header{
 }
 
 .card {
-  padding: 20px;
-  border: 2px solid rgb(17, 43, 76);
-  height: 80%;
-  margin: 10px;
+  height: 93%;
+  margin-left: -100px;
+  padding: 5px;
 }
 
+.foodimg {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.recipes {
+  height: 100%;
+  margin-left: 120px;
+  padding: 5px;
+  width: 90%;
+}
 
 a:link {
     color: rgb(17, 43, 76);
@@ -69,12 +68,10 @@ a:link {
 
 .container{
   background-color: white;
-    display: flex;
-    margin-top: 60px;
-    margin-left: 0px;
-    padding: 20px;
-    width: 94%;
-    height: 700px;
+    margin-top: 20px;
+    margin-left: 120px;
+    width: 90%;
+    height: 670px;
 }
 
 
