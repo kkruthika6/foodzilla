@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SideBar from '../components/SideBar'
+import SideBar from '../../components/SideBar'
 
 function Home() {
     return ( 
