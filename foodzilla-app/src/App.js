@@ -12,6 +12,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import MainPage from './pages/MainPage/MainPage';
 import Signin from '../src/pages/Login/Signin'
 import Signup from '../src/pages/Login/Signin'
+import Cart from '../src/pages/CartItems/Cart'
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
             <Route path='/' element={<Home />}></Route>
             <Route path="/signin" element={<Signin/>}/>
               <Route path="/signup" element={<Signup/>}/>
-            
+            <Route path="/cart" element={<Cart/>}/>
             <Route path='/ownerlogin' element={<OwnerLogin />}></Route>
             <Route path='/restaurants' element={<Restaurants />}></Route>
             <Route path='/recipes' element={<Recipes />}></Route>
