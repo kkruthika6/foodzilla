@@ -1,3 +1,5 @@
+//Add, delete and fetch items from wishlist
+
 import pizza from "../apis/pizza"
 import { ADD_WISHLIST_ERROR, ADD_WISHLIST_REQ, ADD_WISHLIST_SUCCESS ,DELETE_WISHLIST_ITEM,GET_WISHLIST} from "./types"
 
