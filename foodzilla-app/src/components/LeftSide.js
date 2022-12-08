@@ -5,7 +5,7 @@ import {IoNotificationsOutline} from 'react-icons/io5'
 import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import CartItemCard from './CartItemCard'
-import delivery from '../assests/delivery.png'
+import delivery from '../assets/delivery.png'
 const LeftSide = ({data ,show}) => {
     const cartItems = useSelector(state=>state.cart.cartItems)
     const user = useSelector(state=>state.user)
