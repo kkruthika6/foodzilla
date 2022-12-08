@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Col, Alert, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Alert } from 'react-bootstrap';
 
 import './Dashboard.css';
 import SideBar from '../../components/SideBar';
@@ -54,7 +53,7 @@ function Dashboard() {
                                     <input type="text" placeholder='Enter message' id='ft' />
                                     <input type="text" placeholder='Enter location' id='location' />
                                     <input type="text" placeholder='Enter Contact number' id='ph' />
-                                    <Button variant="secondary" className='sendbtn' onClick={() => { setClick(true) }}>Send</Button>
+                                    <button onClick={() => { setClick(true) }}>Send</button>
                                 </div>
                             </Card.Text>
                         </Card.Body>

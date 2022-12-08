@@ -6,9 +6,11 @@
   font-family: "papyrus";
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "papyrus";
   overflow-x: hidden;
+  background-color: #DEEFFE;
 }
+
 a {
   text-decoration: none;
 }

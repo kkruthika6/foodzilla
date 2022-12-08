@@ -76,3 +76,15 @@ Tue Dec 06 2022 20:03:35 GMT-0500 (Eastern Standard Time) GET /ws
 Tue Dec 06 2022 20:03:38 GMT-0500 (Eastern Standard Time) GET /ws
 Tue Dec 06 2022 20:05:12 GMT-0500 (Eastern Standard Time) GET /ws
 Wed Dec 07 2022 08:24:47 GMT-0500 (Eastern Standard Time) GET /api/products
+Wed Dec 07 2022 20:29:02 GMT-0500 (Eastern Standard Time) GET /ws
+Wed Dec 07 2022 20:29:11 GMT-0500 (Eastern Standard Time) GET /api/products?category=pizza
+Wed Dec 07 2022 20:29:15 GMT-0500 (Eastern Standard Time) GET /api/products?category=Drink
+Wed Dec 07 2022 20:30:11 GMT-0500 (Eastern Standard Time) GET /api/products?category=pizza
+Wed Dec 07 2022 20:30:13 GMT-0500 (Eastern Standard Time) GET /api/products?category=Burger
+Wed Dec 07 2022 20:30:14 GMT-0500 (Eastern Standard Time) GET /api/products?category=Sandwich
+Wed Dec 07 2022 20:30:15 GMT-0500 (Eastern Standard Time) GET /api/products?category=Smoothy
+Wed Dec 07 2022 20:30:16 GMT-0500 (Eastern Standard Time) GET /api/products?category=Snaks
+Wed Dec 07 2022 20:30:16 GMT-0500 (Eastern Standard Time) GET /api/products?category=Drink
+Wed Dec 07 2022 20:31:14 GMT-0500 (Eastern Standard Time) GET /ws
+Wed Dec 07 2022 20:35:34 GMT-0500 (Eastern Standard Time) GET /ws
+Wed Dec 07 2022 20:37:25 GMT-0500 (Eastern Standard Time) GET /api/products?category=pizza
