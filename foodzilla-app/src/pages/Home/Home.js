@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import MainArea from '../../components/MainArea';
-import SideBar from '../../components/SideBar'
+import SideBar from '../../components/SideBar';
+import LeftSide from '../../components/LeftSide';
+
 
 function Home() {
     return (
         <>
-        <MainArea />
-        <SideBar/> 
+            <SideBar />
+            <MainArea />
+            <LeftSide />
         </>
     );
 }

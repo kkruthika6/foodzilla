@@ -297,3 +297,25 @@ ReferenceError: jwt is not defined
     at genrateToken (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/src/routes/userRouter.js:11:5)
     at /Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/src/routes/userRouter.js:79:20
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ReferenceError: jwt is not defined
+    at isAuth (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/src/routes/productRouter.js:13:7)
+    at Layer.handle [as handle_request] (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:47:12)
+ReferenceError: jwt is not defined
+    at isAuth (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/src/routes/productRouter.js:13:7)
+    at Layer.handle [as handle_request] (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:175:3)
+    at router (/Users/kruthikak/Desktop/Sem-1/Web Design/Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:47:12)
