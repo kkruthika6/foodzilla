@@ -6,6 +6,7 @@ import Recipes from './pages/Recipes/Recipes';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Signin from './pages/Login/Signin';
 import Signup from './pages/Login/Signup';
+import Cart from './pages/CartItems/Cart'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/signup' element={<Signup />}></Route>
             <Route path='/recipes' element={<Recipes />}></Route>
             <Route path='/dashboard' element={<Dashboard />}></Route>
+            <Route path="/cart" element={<Cart/>}/>
           </Routes>
         </main>
       </Fragment>
