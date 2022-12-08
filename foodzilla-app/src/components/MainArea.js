@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../styles/mainarea.css'
 import Header from './Header'
 import pizzaSilce from '../assets/pizzaSilce.png'
-// import Product from './products/Product'
+import Product from './products/Product'
 import { useSelector } from 'react-redux'
 const MainArea = () => {
     const user = useSelector(state=>state.user)
@@ -91,7 +91,7 @@ const MainArea = () => {
               </div>
             </div>
             <div className="all-list">
-             {/* <Product category={category}/> */}
+             <Product category={category}/>
             </div>
          </div>
          
