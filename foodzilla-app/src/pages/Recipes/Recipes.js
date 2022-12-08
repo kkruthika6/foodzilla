@@ -22,7 +22,6 @@ function Recipes() {
             }
         };
         axios.request(options).then(function (response) {
-            console.log(response.data.results)
             setData(response.data.results);
             setFlag(true);
         }).catch(function (error) {
@@ -65,7 +64,6 @@ function Recipes() {
                                                                         {r.instructions?.map((i) => { return (<li style={{ color: "black", textAlign: "left" }}>{i.display_text}<br /></li>) })}
                                                                     </ol>
                                                                     {r.user_ratings ? r.user_ratings.score !== null ? "User Rating: " + (r.user_ratings.score * 100) + '%' : null : null}
-                                                                    <br />
                                                                 </>
                                                             )
                                                         }
@@ -81,11 +79,8 @@ function Recipes() {
                                                             {d.instructions ? "Instructions:" : null}
                                                             <ol>
                                                                 {d.instructions?.map((i) => { return (<li style={{ color: "black", textAlign: "left" }}>{i.display_text}<br /></li>) })}
-                                                                <br />
                                                             </ol>
-                                                            <br />
                                                             {d.user_ratings ? d.user_ratings.score !== null ? "User Rating: " + (d.user_ratings.score * 100) + '%' : null : null}
-                                                            <br />
                                                         </>)
                                                     }</>
                                             </Card.Text>
