@@ -7,6 +7,8 @@ import {useForm} from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../../components/Spinner'
 import { signupUser } from '../../actions/auth';
+import logo from '../../assets/logo.png'
+
 const Signup = () => {
     const [isLoading,setLoading]=useState(false)
     const dispatch =useDispatch();
@@ -55,7 +57,7 @@ const Signup = () => {
         <div className='auth'>
             <div className="form">
                 <div className="logo">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4039/4039232.png" alt="" />
+                    <img src={logo} alt="" />
                 </div>
                 {user?.error&&(<div className="err">
                  {user?.error}
@@ -68,12 +70,12 @@ const Signup = () => {
                     <input type="password" name="password" id="" placeholder='Password' {...register('password', { required: true })} />
                     {errors?.password?.message&&<p className="err">{errors?.password?.message}</p>}
                     <div className="text">
-                      <Link to="/updatepassword">  <p>Forget Password?</p></Link>
+                      <Link to="/updatepassword">  <p>Forgot Password?</p></Link>
                     </div>
                     <button type="submit">{user?.loading? <Spinner/>:'Register'}</button>
                 </form>
                 <div className="forget">
-                 <p>Alreday a user?</p> <Link to="/signin">Login</Link>
+                 Already a user?<Link to="/signin">Login</Link>
                 </div>
             </div>
         </div>
