@@ -5,7 +5,6 @@ import {IoNotificationsOutline} from 'react-icons/io5'
 import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import CartItemCard from './CartItemCard'
-import delivery from '../assets/delivery.png'
 const LeftSide = ({data ,show}) => {
     const cartItems = useSelector(state=>state.cart.cartItems)
     const user = useSelector(state=>state.user)
@@ -39,8 +38,8 @@ const LeftSide = ({data ,show}) => {
                   {
                         data?.map((item,i)=>{
                             if(item.inStockItem<=3){
-                                return <div  key={i}>{item.name} has came to end</div>
-                            }
+                                return <div  key={i}>{item.name} has come to end</div>
+                            } else {return null}
                             
                         })
                       }
@@ -48,7 +47,7 @@ const LeftSide = ({data ,show}) => {
             </div>
            { show?null:(<div className="sidebar-msg">
                 <div className="img">
-                    <img src={delivery} alt="" />
+                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/delivery-man-delivering-parcel-3918090-3259201.png" alt="" />
                 </div>
                 <div className="text">
                     <h2>Safe Delivery <span>@</span> your doors</h2>
@@ -57,7 +56,7 @@ const LeftSide = ({data ,show}) => {
            { show?null:(<div className="side-cart-area">
                 <div className="text">
                     <h4>Order Menu</h4>
-                    <Link to='/cart'><p>Veiw All <BsFillArrowRightSquareFill/></p></Link>
+                    <Link to='/cart'><p>View All <BsFillArrowRightSquareFill/></p></Link>
                 </div>
             <div className='cart-area'>
                       <div className="all-items side-cart">

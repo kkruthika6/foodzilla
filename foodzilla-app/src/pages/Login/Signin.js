@@ -5,6 +5,7 @@ import {yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup';
 import {useForm} from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux';
+import logo from '../../assets/logo.png'
 
 
 
@@ -58,7 +59,7 @@ const Signin = () => {
         <div className='auth'>
             <div className="form">
                 <div className="logo">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4039/4039232.png" alt="" />
+                    <img src={logo} alt="" />
                 </div>
                 {user?.error&&(<div className="err">
                  {user?.error}
@@ -69,12 +70,12 @@ const Signin = () => {
                     <input type="password" name="password" id="" placeholder='Password' {...register('password', { required: true })} />
                     {errors?.password?.message&&<p className="err">{errors?.password?.message}</p>}
                     <div className="text">
-                      <Link to="/updatepassword">  <p>Forget Password?</p></Link>
+                      <Link to="/updatepassword">  <p>Forgot Password?</p></Link>
                     </div>
                     <button type="submit">{user?.loading? <Spinner/>:'Login'}</button>
                 </form>
                 <div className="forget">
-                 <p>New user?</p> <Link to="/signup">Register</Link>
+                    New user?<Link to="/signup">Register</Link>
                 </div>
             </div>
         </div>
