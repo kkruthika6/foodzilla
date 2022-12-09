@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import SideBar from '../components/SideBar';
+import SideBar from '../../components/SideBar';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteAddress } from '../actions/address';
+import { deleteAddress } from '../../actions/address';
 import { RiAddFill } from 'react-icons/ri'
-import { getAdress } from '../actions/address';
-import AddressModal from '../components/AddressModal';
-import LeftSide from '../components/LeftSide';
+import { getAdress } from '../../actions/address';
+import AddressModal from '../../components/AddressModal';
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png'
-import { showSideBar } from '../actions'
+import logo from '../../assets/logo.png'
+import { showSideBar } from '../../actions'
 import { HiMenuAlt1 } from 'react-icons/hi';
-import styles from '../styles/header.css'
+import styles from '../../styles/header.css'
 
 const Address = () => {
     const allAdress = useSelector(state => state.address.addressItems)
@@ -25,8 +24,8 @@ const Address = () => {
         setAddressToEdit(address)
         setShow(true)
     }
-    useEffect(() => {
-        if (user) {
+    useEffect(()=>{
+        if(user){
             dispatch(getAdress(user._id))
         }
     }, [])

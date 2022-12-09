@@ -8,7 +8,7 @@ import Signin from './pages/Login/Signin';
 import Signup from './pages/Login/Signup';
 import Cart from './pages/CartItems/Cart';
 import Search from './pages/Home/Search';
-import Address from './pages/Address';
+import Address from './pages/Address/Address';
 import Profile from './pages/Profile/Profile'
 import Admin from './pages/Admin/Admin';
 import AddProduct from './pages/Admin/AddProduct';
