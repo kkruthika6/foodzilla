@@ -7,7 +7,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Signin from './pages/Login/Signin';
 import Signup from './pages/Login/Signup';
 import Cart from './pages/CartItems/Cart';
-import Wishlist from './pages/Wishlist';
+import Search from './pages/Home/Search';
 import Address from './pages/Address';
 import Profile from './pages/Profile/Profile'
 import Admin from './pages/Admin/Admin';
@@ -23,7 +23,7 @@ function App() {
             <Route path='/' element={<Home />}></Route>
             <Route path='/signin' element={<Signin />}></Route>
             <Route path='/signup' element={<Signup />}></Route>
-            <Route path="/wishlist" element={<Wishlist/>}/>
+            <Route path="/search" element={<Search/>}/>
             <Route path="/your-address" element={<Address/>}/>
             <Route path='/recipes' element={<Recipes />}></Route>
             <Route path='/dashboard' element={<Dashboard />}></Route>

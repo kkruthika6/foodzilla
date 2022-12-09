@@ -5,6 +5,8 @@ const expressAsyncHandler = require('express-async-handler');
 const Product = require('../models/Product');
 const Wishlist = require('../models/Wishlist');
 
+const stripe = require('stripe')('sk_test_51MCwj2L0wTDAd1EX3i2qWiNsyBv4BBfMnCpHdu7e0B2WZwUvc1G9fALZ0zo1SBprywq3Bl0O1IppanvSS9Ded8rj00uLe9RJuN');
+
 const isAuth = (req, res, next) => {
     const authorization = req.headers.authorization
 
@@ -115,6 +117,31 @@ productRouter.get('/:id', expressAsyncHandler(async (req, res) => {
         res.send(product)
     } else {
         res.status(404).send({ message: 'Product not found!' })
+    }
+}))
+
+//Get payment url
+productRouter.get('/payment/:price', expressAsyncHandler(async (req, res) => {
+    const product = await stripe.products.create({
+        name: 'Food Order',
+      });
+      const price = await stripe.prices.create({
+        unit_amount: req.params.price+"00",
+        currency: 'usd',
+        product: product.id,
+      });
+    const paymentLink = await stripe.paymentLinks.create({
+      line_items: [
+        {
+          price: price.id,
+          quantity: 1,
+        },
+      ],
+    });
+    if (paymentLink.url) {
+        res.send(paymentLink.url)
+    } else {
+        res.status(404).send({ message: 'Oops! Some error occured!' })
     }
 }))
 
