@@ -18,3 +18,44 @@
 .foodimg {
     margin-left: 300px;
 }
+
+@media (max-width: 475px) {
+
+  .foodimg {
+    width: 100%;
+  }
+  .recipefeed{
+    width: 100%;
+  }
+  .recipes{
+    float: right;
+  }
+  .top {
+    display: block;
+    margin-left:26px;
+  }
+}
+
+@media (max-width: 630px) {
+  .foodimg {
+    width: 100%;
+  }
+  .recipefeed{
+    width: 100%;
+  }
+  .recipes{
+    float: right;
+  }
+}
+
+@media (max-width: 1104px) {
+  .foodimg {
+    width: 100%;
+  }
+  .recipefeed{
+    width: 100%;
+  }
+  .recipes{
+    float: right;
+  }
+}
