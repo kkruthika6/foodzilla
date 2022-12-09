@@ -9,6 +9,7 @@ import Signup from './pages/Login/Signup';
 import Cart from './pages/CartItems/Cart';
 import Wishlist from './pages/Wishlist';
 import Address from './pages/Address';
+import Profile from './pages/Profile/Profile'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path='/recipes' element={<Recipes />}></Route>
             <Route path='/dashboard' element={<Dashboard />}></Route>
             <Route path="/cart" element={<Cart/>}/>
+            <Route path="/profile" element={<Profile/>}/>
           </Routes>
         </main>
       </Fragment>
