@@ -1,8 +1,8 @@
-import pizza from "../apis/pizza"
+import foodzilla from "../apis/foodzilla"
 import { ADDRESS_ERROR, ADD_ADDRESS, DELETE_ADDRESS, GET_ADDRESS, SELECET_ADDRESS, UPDATE_ADDRESS } from "./types"
 export const addAddress=(name,mobNo,pinCode,address,town,state,city,userId)=>async dispatch=>{
 try {
-    const {data}=await pizza.post('/api/users/address',{name,mobNo,pinCode,address,town,state,city,userId})
+    const {data}=await foodzilla.post('/api/users/address',{name,mobNo,pinCode,address,town,state,city,userId})
     dispatch({type:ADD_ADDRESS,payload:data})
 } catch (error) {
     dispatch({type:ADDRESS_ERROR,payload:error.response&&error.response.data.message?error.response.data.message:error.message})
@@ -10,7 +10,7 @@ try {
 }
 export const getAdress =(id)=>async dispatch =>{
     try{
-        const {data} = await pizza.get(`/api/users/shipping/${id}`)
+        const {data} = await foodzilla.get(`/api/users/shipping/${id}`)
         // console.log(data)
         dispatch({type:GET_ADDRESS,payload:data})
     }
@@ -22,7 +22,7 @@ export const getAdress =(id)=>async dispatch =>{
 
  export const deleteAddress=(id)=>async dispatch=>{
      try {
-         const {data} =await pizza.delete(`/api/users/address/${id}`)
+         const {data} =await foodzilla.delete(`/api/users/address/${id}`)
         //  console.log(data)
          dispatch({type:DELETE_ADDRESS,payload:data})
      } catch (error) {
@@ -34,7 +34,7 @@ export const getAdress =(id)=>async dispatch =>{
      try {
 
         const user = getState().user?.user;
-         const {data}=await pizza.put(`/api/users/address/${_id}`,{name,mobNo,pinCode,address,town,state,city,userId},{
+         const {data}=await foodzilla.put(`/api/users/address/${_id}`,{name,mobNo,pinCode,address,town,state,city,userId},{
             headers:{
                 Authorization: `Bearer ${user.token}` 
              }

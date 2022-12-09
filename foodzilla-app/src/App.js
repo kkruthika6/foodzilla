@@ -10,6 +10,8 @@ import Cart from './pages/CartItems/Cart';
 import Wishlist from './pages/Wishlist';
 import Address from './pages/Address';
 import Profile from './pages/Profile/Profile'
+import Admin from './pages/Admin/Admin';
+import AddProduct from './pages/Admin/AddProduct';
 
 
 function App() {
@@ -27,6 +29,9 @@ function App() {
             <Route path='/dashboard' element={<Dashboard />}></Route>
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/profile" element={<Profile/>}/>
+            <Route path='/admin' element={<Admin />}></Route>
+            <Route path='/signin' element={<Signin />}></Route>
+            <Route path='/addProduct' element={<AddProduct />}></Route>
           </Routes>
         </main>
       </Fragment>

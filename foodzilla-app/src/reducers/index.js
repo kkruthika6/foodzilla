@@ -6,7 +6,9 @@ import { addressReducer } from "./addressReducer";
 import { orderReducer,orderDetail, searchItems } from "./odersReducer";
 import { wishlistReducer } from "./wishlistReducer";
 import { sidebarReducer } from "./sidebarreducer";
+import productReducer from "./productsReducer";
 export default combineReducers({
+    allProducts:productReducer,
     allPizza:pizzaReducer,
     cart:cartReducer,
     user:signInReducer,

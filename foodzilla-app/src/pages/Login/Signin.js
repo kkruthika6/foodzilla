@@ -51,7 +51,12 @@ const Signin = () => {
 
     useEffect(()=>{
         if(userInfo){
-            navigate(redirect)
+            if(userInfo.isAdmin){
+                navigate("/admin")
+            }
+            else{
+                navigate(redirect)
+            }
         }
     },[userInfo])
 

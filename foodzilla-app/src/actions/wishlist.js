@@ -1,6 +1,4 @@
-//Add, delete and fetch items from wishlist
-
-import pizza from "../apis/pizza"
+import foodzilla from "../apis/foodzilla"
 import { ADD_WISHLIST_ERROR, ADD_WISHLIST_REQ, ADD_WISHLIST_SUCCESS ,DELETE_WISHLIST_ITEM,GET_WISHLIST} from "./types"
 
 export const addToWishlist =(item)=>async (dispatch,getState)=>{
@@ -8,7 +6,7 @@ export const addToWishlist =(item)=>async (dispatch,getState)=>{
     dispatch({type:ADD_WISHLIST_REQ,payload:item})
 try {
     const user = getState().user?.user;
-    const {data}=await pizza.post('/api/products/wishlist',item,{
+    const {data}=await foodzilla.post('/api/products/wishlist',item,{
         headers:{
             Authorization: `Bearer ${user.token}`
          }
@@ -23,7 +21,7 @@ try {
 export const  getWishlist=()=>async (dispatch,getState)=>{
     try {
         const user = getState().user?.user;
-        const {data}=await pizza.get('/api/products/wishlist',{
+        const {data}=await foodzilla.get('/api/products/wishlist',{
             headers:{
                 Authorization: `Bearer ${user.token}` 
              }
@@ -39,7 +37,7 @@ export const deleteItemFromWishlist=(id)=>async(dispatch,getState)=>{
     dispatch({type:ADD_WISHLIST_REQ,payload:id})
     try {
         const user = getState().user?.user;
-        const {data}=await pizza.delete(`/api/products/wishlist/${id}`,{
+        const {data}=await foodzilla.delete(`/api/products/wishlist/${id}`,{
             headers:{
                 Authorization: `Bearer ${user.token}` 
              }
