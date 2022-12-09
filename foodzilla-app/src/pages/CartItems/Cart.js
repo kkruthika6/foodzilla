@@ -7,6 +7,7 @@ import emtycart from '../../assets/emtycart.gif'
 import CartItemCard from '../../components/CartItemCard'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import HeaderLogo from '../../components/HeaderLogo'
 
 const Cart = () => {
     const cartItems = useSelector(state => state.cart.cartItems)
@@ -29,8 +30,8 @@ const Cart = () => {
     return (
         <>
             <SideBar />
+            <HeaderLogo title="MY CART" />
             <div className='cart-screen'>
-                <h1>MY CART</h1>
                 {
                     cartItems?.length > 0 ? (
                         <div className='cart-area'>
