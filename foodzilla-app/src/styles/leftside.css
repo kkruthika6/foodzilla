@@ -121,10 +121,10 @@ margin-top: -13in;
   margin-bottom: 2rem;
   padding: 20px;
 }
-.sidebar-msg h2 {
+.sidebar-msg h4 {
   color: var(--text-gary);
 }
-.sidebar-msg h2 span {
+.sidebar-msg h4 span {
   color: var(--primary);
 }
 .sidebar-msg .img img {

@@ -1,0 +1,34 @@
+.responsive {
+    display: none;
+  }
+  
+  @media (max-width: 1104px) {
+    .responsive {
+      display: block;
+      margin-right: 10px;
+    }
+    .responsive svg {
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .foodzillalogo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  }
+  .logoheader {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 136px;
+    margin-top: 20px;
+  }
+  .logoheader img {
+    width: 120px;
+    height: 120px;
+  }

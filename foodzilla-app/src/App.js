@@ -14,7 +14,7 @@ import Admin from './pages/Admin/Admin';
 import AddProduct from './pages/Admin/AddProduct';
 import Shipping from './pages/Shipping/Shipping';
 import Payment from './pages/Payment/Payment';
-
+import OrderSuccessful from './pages/OrderSuccessful';
 
 function App() {
   return (
@@ -36,6 +36,7 @@ function App() {
             <Route path='/addProduct' element={<AddProduct />}></Route>
             <Route path="/shipping" element={<Shipping/>}/>
             <Route path="/payment" element={<Payment/>}/>
+            <Route path="/order" element={<OrderSuccessful/>}/>
           </Routes>
         </main>
       </Fragment>
