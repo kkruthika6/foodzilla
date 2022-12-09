@@ -10,9 +10,8 @@ import { FaHome, FaTimes, FaPlus, FaTrash } from 'react-icons/fa'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { FiLogOut } from 'react-icons/fi'
 import { logout } from '../../actions/auth'
-import {HiMenuAlt1} from 'react-icons/hi'
+import { HiMenuAlt1 } from 'react-icons/hi'
 import logo from '../../assets/logo.png'
-
 
 const Admin = () => {
     const dispatch = useDispatch()
@@ -72,7 +71,7 @@ const Admin = () => {
                         </div>
                         <Link to="/"><img src={logo} alt="logo" /></Link>
                     </div>
-                    <span style={{fontSize: "30px", color: "rgb(17, 43, 76)"}}>Hello, { JSON.parse(localStorage.getItem("User")).name }</span>
+                    <span style={{ fontSize: "30px", color: "rgb(17, 43, 76)" }}>Hello, {JSON.parse(localStorage.getItem("User")).name}</span>
                 </div>
 
                 <div className="mainarea admin-items">
@@ -94,7 +93,7 @@ const Admin = () => {
                                     <p>{item.countInStock}</p>
                                     <div className='btn' onClick={() => increaseQty(item)}><IoMdAdd /></div>
                                 </div>
-                                <div style={{ width: "10%", textAlign: "center" }} onClick={() => handleDelete(item)}><FaTrash/></div>
+                                <div style={{ width: "10%", textAlign: "center" }} onClick={() => handleDelete(item)}><FaTrash /></div>
                             </div>
                         ))
                     }

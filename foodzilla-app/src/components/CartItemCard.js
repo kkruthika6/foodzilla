@@ -21,7 +21,7 @@ const CartItemCard = ({item}) => {
  }
    
 const reomveFormCartHandler =()=>{
-// delte action
+// delete action
 dispatch(deleteItem(item.product))
 }
 
