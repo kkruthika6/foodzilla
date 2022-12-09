@@ -47,8 +47,6 @@ const LeftSide = ({ data, show }) => {
                     </div>
                 </div>
             </div>)}
-
-
         </div>
     )
 }

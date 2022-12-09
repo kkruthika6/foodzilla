@@ -2,18 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Alert } from 'react-bootstrap';
-import {Link} from 'react-router-dom'
-import logo from '../../assets/logo.png'
-import {useDispatch} from 'react-redux'
-import { showSideBar } from '../../actions'
-import './Dashboard.css';
-import {HiMenuAlt1} from 'react-icons/hi'
+import '../../styles/dashboard.css';
 import SideBar from '../../components/SideBar';
+import HeaderLogo from '../../components/HeaderLogo';
 
 function Dashboard() {
     const [feed, setFeed] = useState([]);
     const [click, setClick] = useState(false);
-    const dispatch =useDispatch()
+
     useEffect(() => {
         if (click === true) {
             const listdata = document.getElementById("ft").value;
@@ -33,18 +29,7 @@ function Dashboard() {
     return (
         <>
             <SideBar />
-            <div className='top'>
-            <div className="foodlogo">
-              <div className="mob" onClick={()=>dispatch(showSideBar(true))}>
-               <HiMenuAlt1/>
-              </div>
-              
-              <Link to="/"><img src={logo} alt="logo" /></Link>
-            </div>
-            <h2>Have Leftovers?</h2>
-            </div>
-            <br />
-            
+            <HeaderLogo title="Have Leftovers?"/>
             <div class="container">
                 <Container>
                 <br/>

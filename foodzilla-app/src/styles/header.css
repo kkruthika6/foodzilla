@@ -17,6 +17,9 @@
       justify-content: center;
       margin-bottom: 20px;
     }
+    .logoheader {
+        margin-left: 20px;
+    }
   }
   .logoheader {
     width: 100%;

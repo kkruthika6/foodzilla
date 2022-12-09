@@ -1,6 +1,6 @@
 import React from 'react';
-import SideBar from '../components/SideBar';
-import image from '../assets/orderSuccess.jpeg'
+import SideBar from '../../components/SideBar';
+import image from '../../assets/orderSuccess.jpeg'
 
 function OrderSuccessful() {
     return ( 
