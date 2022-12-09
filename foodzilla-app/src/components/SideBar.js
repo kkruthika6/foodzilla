@@ -29,11 +29,11 @@ const SideBar = () => {
             <Link to="/"><div className={`icon ${path==='/'&&'active'}`}>
                 <FaHome/>
             </div></Link>
-            <Link to="/orders"><div className={`icon ${path==='/orders'&&'active'}`}>
-                <FaBoxOpen/>
+            <Link to='/recipes'> <div className={`icon ${path==='/recipes'&&'active'}`}>
+                <MdOutlineFoodBank/>
             </div></Link>
-            <Link to='/wishlist'> <div className={`icon ${path==='/wishlist'&&'active'}`}>
-                <BsHeartHalf/>
+            <Link to='/dashboard'> <div className={`icon ${path==='/dashboard'&&'active'}`}>
+                <CgFeed/>
             </div></Link>
            <Link to="/your-address"> <div className={`icon ${path==='/your-address'&&'active'}`}>
                 <CgFileDocument/>
@@ -42,13 +42,6 @@ const SideBar = () => {
             <Link to='/profile'><div className={`icon ${path==='/profile'&&'active'}`}>
                 <BsGear/>
             </div></Link>
-            <Link to='/recipes'> <div className={`icon ${path==='/recipes'&&'active'}`}>
-                <MdOutlineFoodBank/>
-            </div></Link>
-            <Link to='/dashboard'> <div className={`icon ${path==='/dashboard'&&'active'}`}>
-                <CgFeed/>
-            </div></Link>
-
             </div>
             <div className="bottom-icon">
             {user&&(<div className="icon" onClick={handleSignOut}>
