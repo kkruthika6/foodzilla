@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation ,useNavigate} from 'react-router-dom';
 import '../../styles/shipping.css';
+import foodzilla from "../../apis/foodzilla"
 import { selectPayment } from '../../actions/orders';
 const Payment = () => {
   const location = useLocation();
@@ -15,9 +16,13 @@ const Payment = () => {
     const discount = 0;
     const totalPrice= (cartPrice+deleviryPrice)-discount;
      const [paymentType,setPaymentType]=useState('COD')
-    const handlePlaceOrder =()=>{
-      dispatch(selectPayment(paymentType))
-      navigate('/order')
+    const handlePlaceOrder =async ()=>{
+      if (paymentType === "stripe") {
+        const data = await foodzilla.get(`/api/products/payment/${totalPrice}`);
+        window.location.replace(data.data);
+      } else {
+        navigate('/order')
+      }
     }
 
     console.log(paymentType)
@@ -51,9 +56,9 @@ const Payment = () => {
          <input  type="radio" value="COD" name="payment" id="cod" checked />
          <label htmlFor="cod">CASH ON DELIVERY</label>
        </div>
-       <div className='select-opt' onClick={()=>setPaymentType("razorpay")}>
+       <div className='select-opt' onClick={()=>setPaymentType("stripe")}>
          <input  type="radio" value="paypal" name="payment" id="paypal" />
-         <label htmlFor="paypal">RAZORPAY</label>
+         <label htmlFor="paypal">Stripe</label>
        </div>
        
      </div>
