@@ -4,6 +4,7 @@ import {RiAddFill} from 'react-icons/ri'
 import {useLocation,useNavigate} from 'react-router-dom'
 import AddressModal from '../../components/AddressModal'
 import '../../styles/shipping.css'
+import SideBar from '../../components/SideBar'
 import { deleteAddress, getAdress,selectAddress, updateAddress } from '../../actions/address';
 const Shipping = () => {
 
@@ -53,6 +54,7 @@ const Shipping = () => {
     
   return (
     <>
+    <SideBar/>
   <div className='shipping'>
    <div className="progress">
         <div className="status">
