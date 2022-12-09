@@ -58,7 +58,7 @@ const Payment = () => {
        </div>
        <div className='select-opt' onClick={()=>setPaymentType("stripe")}>
          <input  type="radio" value="paypal" name="payment" id="paypal" />
-         <label htmlFor="paypal">Stripe</label>
+         <label htmlFor="paypal">STRIPE</label>
        </div>
        
      </div>

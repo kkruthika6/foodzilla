@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import { Container, Col } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+import logo from '../../assets/logo.png'
+import {useDispatch} from 'react-redux'
+import { showSideBar } from '../../actions'
+import {HiMenuAlt1} from 'react-icons/hi'
 import './Recipes.css'
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
@@ -10,7 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Recipes() {
     const [data, setData] = useState([]);
     const [flag, setFlag] = useState(false);
-
+    const dispatch =useDispatch()
     if (flag === false) {
         const options = {
             method: 'GET',
@@ -33,8 +37,18 @@ function Recipes() {
     return (
         <>
             <SideBar />
-            <br />
+            <div className='top'>
+            <div className="foodlogo">
+              <div className="mob" onClick={()=>dispatch(showSideBar(true))}>
+               <HiMenuAlt1/>
+              </div>
+              
+              <Link to="/"><img src={logo} alt="logo" /></Link>
+            </div>
             <h2>Tasty Recipes</h2>
+            </div>
+            <br />
+            
             <div className='recipefeed'>
                 {flag === false ? <div className='loader'><Spinner animation="border" variant="dark" /></div> :
                     data !== undefined && data.length !== 0 ?
