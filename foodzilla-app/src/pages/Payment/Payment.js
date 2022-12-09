@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation ,useNavigate} from 'react-router-dom';
 import '../../styles/shipping.css';
+import SideBar from '../../components/SideBar'
 import foodzilla from "../../apis/foodzilla"
 import { selectPayment } from '../../actions/orders';
 const Payment = () => {
@@ -34,6 +35,8 @@ const Payment = () => {
   },[])
 
   return (
+    <>
+    <SideBar/>
   <div className='shipping'>
        <div className="progress">
         <div className="status">
@@ -91,6 +94,7 @@ const Payment = () => {
    </div>
 
   </div>
+  </>
   );
 };
 
