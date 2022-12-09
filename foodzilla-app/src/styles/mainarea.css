@@ -287,9 +287,19 @@ button:active,
   }
   .logo {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin-bottom: 20px;
+  }
+  .search-bar {
+    display: block;
+  }
+  .header {
+    display: block;
+    height: fit-content;
+  }
+  .header .input {
+    width: 100%;
   }
 }
 

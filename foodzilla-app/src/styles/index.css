@@ -77,3 +77,9 @@ main {
 .search .all-products .product-card {
   margin: 30px;
 }
+
+@media screen and (max-width: 1104px){
+  main {
+    display: block;
+  }
+}

@@ -165,6 +165,12 @@ a:link {
     }
   }
 
+  @media screen and (max-width: 1104px){
+    h2{
+      margin-left: 0px;
+    }
+  }
+
   @media screen and (min-width: 1024px) {
     .nav a:first-child {
       margin-left: 300px;

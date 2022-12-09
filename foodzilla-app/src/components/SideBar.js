@@ -8,12 +8,12 @@ import { Link,useLocation } from 'react-router-dom'
 import {FiLogOut} from 'react-icons/fi'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/auth'
-// import { showSideBar } from '../actions'
+import { showSideBar } from '../actions'
 const SideBar = () => {
        const dispatch =useDispatch()
        const user = useSelector(state=>state.user.user)
-       //const show =useSelector(state=>state.sidebar.show)
-       const [show, showSideBar] = useState(useSelector(state=>state.sidebar.show))
+       const show =useSelector(state=>state.sidebar.show)
+    //    const [show, showSideBar] = useState(useSelector(state=>state.sidebar.show))
        const location =useLocation()
        const path =location.pathname
 

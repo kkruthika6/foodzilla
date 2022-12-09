@@ -33,7 +33,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: 160px;
+  height: 170px;
   margin: 20px 0;
   background: #fff;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
@@ -165,4 +165,14 @@
   color: #388e3c !important;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+@media screen and (max-width: 1104px) {
+  /* .all-items.side-cart .cart-card {
+    width: 90%;
+  } */
+  .cart-card .price{
+    margin-left: 0px;
+    width: fit-content;
+  }
 }

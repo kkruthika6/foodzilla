@@ -64,7 +64,7 @@ margin-top: -13in;
   width: 50px;
 }
 .all-items.side-cart .cart-card {
-  height: 100px;
+  height: 120px;
   padding: 10px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.151);
 }
@@ -145,9 +145,16 @@ margin-top: -13in;
   
 }
 
-@media (max-width: 1104px) {
+@media screen and (max-width: 1104px) {
   .leftside {
-    width: 0px;
-    display: none;
+    display:block;
+    width: 100%;
+    align-items: center;
+    margin-top: 0px;
+  }
+  .all-items.side-cart {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
