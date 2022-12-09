@@ -43,20 +43,20 @@ const Cart = () => {
                         <div className="details">
                             <div className="item">
                                 <p>Price</p>
-                                <p><span>₹</span>{cartPrice}</p>
+                                <p><span>$</span>{cartPrice}</p>
                             </div>
                             <div className="item">
                                 <p>Discount</p>
-                                <p>-<span>₹</span>{discount}</p>
+                                <p>-<span>$</span>{discount}</p>
                             </div>
                             <div className="item">
                                 <p>Delivery Charges</p>
-                                <p>{deleviryPrice===0?<span className='free'>Free</span>:<span>₹{deleviryPrice}</span>}</p>
+                                <p>{deleviryPrice===0?<span className='free'>Free</span>:<span>${deleviryPrice}</span>}</p>
                             </div>
                         </div>
                         <div className="total">
                             <h3>Total</h3>
-                            <h3><span>₹</span>{totalPrice}</h3>
+                            <h3><span>$</span>{totalPrice}</h3>
                         </div>
                       </div>
                       <button onClick={checkoutHandler} disabled={totalPrice===0?true:false}>PROCEED TO CHECKOUT</button>

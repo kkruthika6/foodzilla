@@ -46,7 +46,7 @@
   background: #f48f0159;
   border-radius: 20px;
   padding: 10px;
-  margin-right: 20px;
+  margin-right: -20px;
 }
 .cart-card .img img {
   height: 100px;
@@ -100,6 +100,7 @@
   margin-left: 10px;
   background: rgba(255, 0, 0, 0.39);
   font-size: 18px;
+  
 }
 .cart-card .price span {
   font-size: 13px;

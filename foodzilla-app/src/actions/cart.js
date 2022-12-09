@@ -5,7 +5,7 @@ export const addToCart=(item)=>async (dispatch,getState)=>{
    
     
  try {
-    //  const {data} = pizza.get(`/api/pizzas/${data.id}`)
+    
      dispatch({type:ADD_TO_CART,payload:{
          name:item.name,
          price:item.price,
