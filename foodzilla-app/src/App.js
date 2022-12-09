@@ -12,6 +12,7 @@ import Address from './pages/Address';
 import Profile from './pages/Profile/Profile'
 import Admin from './pages/Admin/Admin';
 import AddProduct from './pages/Admin/AddProduct';
+import Shipping from './pages/Shipping/Shipping';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path='/admin' element={<Admin />}></Route>
             <Route path='/signin' element={<Signin />}></Route>
             <Route path='/addProduct' element={<AddProduct />}></Route>
+            <Route path="/shipping" element={<Shipping/>}/>
           </Routes>
         </main>
       </Fragment>
