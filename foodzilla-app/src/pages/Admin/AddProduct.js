@@ -112,9 +112,9 @@ const Profile = () => {
                     <span style={{ fontSize: "30px", color: "rgb(17, 43, 76)" }}>Hello, {JSON.parse(localStorage.getItem("User")).name}</span>
                 </div>
 
-                <div className="main area admin-items">
+                <div className="mainarea admin-items">
                     <h1 style={{ color: "rgb(17, 43, 76", textAlign: "center", marginTop: "0px" }}>Add Product</h1>
-                    <div className="admin-item" style={{ width: "35%", marginLeft: "auto", marginRight: "auto", marginTop: "20px" }}>
+                    <div className="admin-item" style={{ width: "25em", marginLeft: "auto", marginRight: "auto", marginTop: "20px" }}>
                         <form onSubmit={e => handleSubmit(e)}>
                             <div className="profile-input">
                                 Name: <input type="text" id='name' name='name' required value={name} onChange={e => setName(e.target.value)} />

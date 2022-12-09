@@ -84,13 +84,14 @@ productRouter.post('/add-product', expressAsyncHandler(async (req, res) => {
         type: req.body.type,
         countInStock: req.body.countInStock
     })
-    const products = await newProduct.save();
+    await newProduct.save();
+    const products = await Product.find()
     res.send(products)
 }))
 
 //Update product
 productRouter.put('/update-product/:id', expressAsyncHandler(async (req, res) => {
-    const updatedProduct = await Product.findByIdAndUpdate({ _id: req.params.id }, {countInStock: req.body.countInStock})
+    await Product.findByIdAndUpdate({ _id: req.params.id }, {countInStock: req.body.countInStock})
     const products = await Product.find()
     res.send(products)
 }))
@@ -118,6 +119,13 @@ productRouter.get('/:id', expressAsyncHandler(async (req, res) => {
     } else {
         res.status(404).send({ message: 'Product not found!' })
     }
+}))
+
+//Delete product by id
+productRouter.delete('/:id', expressAsyncHandler(async (req, res) => {
+    await Product.deleteOne({ _id: req.params.id })
+    const products = await Product.find()
+    res.send(products)
 }))
 
 //Get payment url

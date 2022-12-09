@@ -4,8 +4,9 @@ import '../../styles/admin.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllProducts } from '../../actions';
 import { updateProduct } from '../../actions';
+import { deleteProduct } from '../../actions';
 import '../../styles/sidebar.css'
-import { FaHome, FaTimes, FaPlus } from 'react-icons/fa'
+import { FaHome, FaTimes, FaPlus, FaTrash } from 'react-icons/fa'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { FiLogOut } from 'react-icons/fi'
 import { logout } from '../../actions/auth'
@@ -32,6 +33,10 @@ const Admin = () => {
     }
     const decreaseQty = (item) => {
         dispatch(updateProduct(item._id, item.countInStock - 1))
+    }
+
+    const handleDelete = (item) => {
+        dispatch(deleteProduct(item._id))
     }
 
     const handleSignOut = () => {
@@ -70,12 +75,13 @@ const Admin = () => {
                     <span style={{fontSize: "30px", color: "rgb(17, 43, 76)"}}>Hello, { JSON.parse(localStorage.getItem("User")).name }</span>
                 </div>
 
-                <div className="main area admin-items">
+                <div className="mainarea admin-items">
                     <div className="admin-item">
                         <p style={{ width: "10%", textAlign: "center" }}>Image</p>
                         <p style={{ width: "10%", textAlign: "center" }}>Name</p>
                         <p style={{ width: "10%", textAlign: "center" }}>Stock</p>
                         <p style={{ width: "10%", textAlign: "center" }}>Count</p>
+                        <p style={{ width: "10%", textAlign: "center" }}>Delete</p>
                     </div>
                     {
                         data.map((item) => (
@@ -87,8 +93,8 @@ const Admin = () => {
                                     <div className='btn' onClick={() => decreaseQty(item)}><IoMdRemove /></div>
                                     <p>{item.countInStock}</p>
                                     <div className='btn' onClick={() => increaseQty(item)}><IoMdAdd /></div>
-
                                 </div>
+                                <div style={{ width: "10%", textAlign: "center" }} onClick={() => handleDelete(item)}><FaTrash/></div>
                             </div>
                         ))
                     }

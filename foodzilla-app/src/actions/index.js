@@ -1,5 +1,5 @@
 import foodzilla from "../apis/foodzilla"
-import { ERROR, ADD_PRODUCT, ADD_PRODUCT_SUCCESS, UPDATE_PRODUCT, UPDATE_PRODUCT_SUCCESS, FETCH_ALL, FETCH_ALL_SUCCESS, FETCH_PIZZAS, FETCH_PIZZAS_SUCCESS, SEARCH_SUCCESS, SERACH_ERROR, SHEARCH_REQ, SHOW_SIDEBAR } from "./types"
+import { ERROR, ADD_PRODUCT, ADD_PRODUCT_SUCCESS, DELETE_PRODUCT, DELETE_PRODUCT_SUCCESS, UPDATE_PRODUCT, UPDATE_PRODUCT_SUCCESS, FETCH_ALL, FETCH_ALL_SUCCESS, FETCH_PIZZAS, FETCH_PIZZAS_SUCCESS, SEARCH_SUCCESS, SERACH_ERROR, SHEARCH_REQ, SHOW_SIDEBAR } from "./types"
 
 export const fetchPizzas=(category)=>async dispatch=>{
   dispatch({type:FETCH_PIZZAS,payload:[]})
@@ -45,6 +45,19 @@ export const addProduct=(name, image, description, price, type, category, countI
   try{
     const {data} = await foodzilla.post(`/api/products/add-product`, {name, image, description, price, type, category, countInStock})
     dispatch({type:ADD_PRODUCT_SUCCESS,payload:data})
+  }
+  catch(e){
+    dispatch({type:ERROR,payload:'Opps!,something went wrong'}) 
+  }
+  
+  
+}
+
+export const deleteProduct=(id)=>async dispatch=>{
+  dispatch({type:DELETE_PRODUCT,payload:[]})
+  try{
+    const {data} = await foodzilla.delete(`/api/products/${id}`)
+    dispatch({type:DELETE_PRODUCT_SUCCESS,payload:data})
   }
   catch(e){
     dispatch({type:ERROR,payload:'Opps!,something went wrong'}) 
