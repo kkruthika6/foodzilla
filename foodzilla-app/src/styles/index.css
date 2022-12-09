@@ -3,17 +3,19 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "papyrus";
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "papyrus";
   overflow-x: hidden;
+  background-color: #DEEFFE;
 }
+
 a {
   text-decoration: none;
 }
 button {
-  background: #f49001;
+  background: rgb(17, 43, 76);
   border-radius: 20px;
   border: none;
   outline: none;
@@ -30,12 +32,12 @@ button,
 }
 button:hover,
 .add-button:hover {
-  background: #f58d47 radial-gradient(circle, transparent 1%, #f58d47 1%)
+  background: rgb(179, 196, 220) radial-gradient(circle, transparent 1%, rgb(17, 43, 76) 1%)
     center/15000%;
 }
 button:active,
 .add-button:active {
-  background-color: #f7b76e;
+  background-color: rgb(17, 43, 76);
   background-size: 100%;
   transition: background 0s;
 }
@@ -62,12 +64,12 @@ main {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #f09312;
+  background: rgb(17, 43, 76);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #f0971b;
+  background: rgb(17, 43, 76);
 }
 .search .all-products {
   height: auto !important;

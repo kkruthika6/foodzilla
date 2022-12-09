@@ -21,7 +21,8 @@
   padding: 8px 10px;
 }
 .cart-area {
-  padding: 20px;
+  padding: 0px;
+  width:auto;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -29,11 +30,12 @@
 }
 .cart-area .cart-card {
   padding: 20px 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: 160px;
+  height: 170px;
+ 
   margin: 20px 0;
   background: #fff;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
@@ -46,7 +48,8 @@
   background: rgba(17, 43, 61, 1);
   border-radius: 20px;
   padding: 10px;
-  margin-right: -20px;
+  margin-right: 20px;
+
 }
 .cart-card .img img {
   height: 100px;
@@ -100,7 +103,6 @@
   margin-left: 10px;
   background: rgba(255, 0, 0, 0.39);
   font-size: 18px;
-  
 }
 .cart-card .price span {
   font-size: 13px;
