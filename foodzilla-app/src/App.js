@@ -10,6 +10,9 @@ import Recipes from './pages/Recipes/Recipes';
 import AddRestaurant from './pages/Restaurants/AddRestaurant';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MainPage from './pages/MainPage/MainPage';
+import Admin from './pages/Admin/Admin';
+import Signin from './pages/Login/Signin';
+import AddProduct from './pages/Admin/AddProduct';
 
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
             <Route path='/addrestaurant' element={<AddRestaurant />}></Route>
             <Route path='/dashboard' element={<Dashboard />}></Route>
             <Route path='/mainpage' element={<MainPage />}></Route>
+            <Route path='/admin' element={<Admin />}></Route>
+            <Route path='/signin' element={<Signin />}></Route>
+            <Route path='/addProduct' element={<AddProduct />}></Route>
           </Routes>
         </main>
       </Fragment>
