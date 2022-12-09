@@ -5,7 +5,7 @@ import './Recipes.css'
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
 import SideBar from '../../components/SideBar';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Recipes() {
     const [data, setData] = useState([]);
@@ -17,7 +17,7 @@ function Recipes() {
             url: 'https://tasty.p.rapidapi.com/recipes/list',
             params: { from: '0', size: '20', tags: 'under_30_minutes' },
             headers: {
-                'X-RapidAPI-Key': '265953d2fdmshea7f9345dced5adp18d1ecjsn357649d41fe7',
+                'X-RapidAPI-Key': 'a3a97f7cacmshdd35a572fb3374fp1b6b99jsn7dfe5d94105e',
                 'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
             }
         };
