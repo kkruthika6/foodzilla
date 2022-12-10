@@ -3,10 +3,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "papyrus";
+  font-family: "Poppins", sans-serif;
 }
 body {
-  font-family: "papyrus";
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
   background-color: #DEEFFE;
 }
@@ -76,10 +76,4 @@ main {
 }
 .search .all-products .product-card {
   margin: 30px;
-}
-
-@media screen and (max-width: 1104px){
-  main {
-    display: block;
-  }
 }

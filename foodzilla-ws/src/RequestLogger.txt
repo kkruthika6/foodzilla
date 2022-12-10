@@ -19714,3 +19714,5 @@ Fri Dec 09 2022 16:54:18 GMT-0500 (Eastern Standard Time) GET /api/products?cate
 Fri Dec 09 2022 16:57:49 GMT-0500 (Eastern Standard Time) POST /api/users/signin
 Fri Dec 09 2022 16:57:49 GMT-0500 (Eastern Standard Time) GET /api/products/getAllProducts
 Fri Dec 09 2022 16:58:02 GMT-0500 (Eastern Standard Time) GET /api/products?category=pizza
+Fri Dec 09 2022 19:58:22 GMT-0500 (Eastern Standard Time) GET /api/products?category=pizza
+Fri Dec 09 2022 20:01:41 GMT-0500 (Eastern Standard Time) GET /api/products?category=pizza

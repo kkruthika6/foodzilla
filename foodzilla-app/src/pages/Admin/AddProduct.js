@@ -39,7 +39,7 @@ const Profile = () => {
 
     const handleImageAsFile = (e) => {
         const img = e.target.files[0]
-        setImageAsFile(img)  
+        setImageAsFile(img)
     }
 
     const uploadImage = () => {
@@ -57,7 +57,7 @@ const Profile = () => {
             },
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                    setImage(downloadURL);    
+                    setImage(downloadURL);
                 });
             }
         );
@@ -114,7 +114,7 @@ const Profile = () => {
 
                 <div className="mainarea admin-items">
                     <h1 style={{ color: "rgb(17, 43, 76", textAlign: "center", marginTop: "0px" }}>Add Product</h1>
-                    <div className="admin-item" style={{ width: "25em", marginLeft: "auto", marginRight: "auto", marginTop: "20px" }}>
+                    <div className="admin-item" style={{ width: "25em", marginLeft: "auto", marginRight: "auto", marginTop: "20px", justifyContent: "space-evenly" }}>
                         <form onSubmit={e => handleSubmit(e)}>
                             <div className="profile-input">
                                 Name: <input type="text" id='name' name='name' required value={name} onChange={e => setName(e.target.value)} />
@@ -149,7 +149,7 @@ const Profile = () => {
                                 Count in stock: <input type="number" id='countInStock' name='counrInStock' required value={count} onChange={e => setCount(e.target.value)} />
                             </div>
                             {<button type='submit'>Add Product</button>}
-                            {successMessage? <h3 style={{color: "green"}}>{successMessage}</h3>:<></>}
+                            {successMessage ? <h3 style={{ color: "green" }}>{successMessage}</h3> : <></>}
                         </form>
                     </div>
                 </div>

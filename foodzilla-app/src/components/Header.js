@@ -6,6 +6,7 @@ import logo from '../assets/logo.png'
 import {useDispatch, useSelector} from 'react-redux'
 import { searchProducts, showSideBar } from '../actions'
 import Spinner from './Spinner'
+
 const Header = () => {
     const [name,setName]=useState('')
      const navigate=useNavigate()
@@ -15,8 +16,8 @@ const Header = () => {
         e.preventDefault()
      dispatch(searchProducts(name))
      navigate(`/search?=${name}`)
-
     }
+    
     return (
         <div className='header'>
            <div className="logo">
