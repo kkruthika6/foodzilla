@@ -39,7 +39,7 @@ const Profile = () => {
 
     const handleImageAsFile = (e) => {
         const img = e.target.files[0]
-        setImageAsFile(img)  
+        setImageAsFile(img)
     }
 
     const uploadImage = () => {
@@ -57,7 +57,7 @@ const Profile = () => {
             },
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                    setImage(downloadURL);    
+                    setImage(downloadURL);
                 });
             }
         );
@@ -149,7 +149,7 @@ const Profile = () => {
                                 Count in stock: <input type="number" id='countInStock' name='counrInStock' required value={count} onChange={e => setCount(e.target.value)} />
                             </div>
                             {<button type='submit'>Add Product</button>}
-                            {successMessage? <h3 style={{color: "green"}}>{successMessage}</h3>:<></>}
+                            {successMessage ? <h3 style={{ color: "green" }}>{successMessage}</h3> : <></>}
                         </form>
                     </div>
                 </div>

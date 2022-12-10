@@ -7,6 +7,8 @@ import emtycart from '../../assets/emtycart.gif'
 import CartItemCard from '../../components/CartItemCard'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import HeaderLogo from '../../components/HeaderLogo'
+
 const Cart = () => {
     const cartItems = useSelector(state => state.cart.cartItems)
     const cartPrice = cartItems.reduce((total, itm) => total + itm?.price * itm?.qty, 0)
@@ -15,6 +17,7 @@ const Cart = () => {
     const totalPrice = (cartPrice + deleviryPrice) - discount;
     const auth = useSelector(state => state.user.user)
     const navigate = useNavigate()
+
     const checkoutHandler = () => {
         if (auth) {
             navigate(`/shipping`)
@@ -23,11 +26,12 @@ const Cart = () => {
             navigate('/signin?redirect=shipping')
         }
     }
+
     return (
         <>
             <SideBar />
+            <HeaderLogo title="MY CART" />
             <div className='cart-screen'>
-                <h2>MY CART</h2>
                 {
                     cartItems?.length > 0 ? (
                         <div className='cartarea'>
@@ -59,8 +63,7 @@ const Cart = () => {
                                         <h3><span>$</span>{totalPrice}</h3>
                                     </div>
                                 </div>
-                                
-                                <button className="checkout-button" onClick={checkoutHandler} disabled={totalPrice === 0 ? true : false}>PROCEED TO CHECKOUT</button>
+                                <button onClick={checkoutHandler} disabled={totalPrice === 0 ? true : false}>PROCEED TO CHECKOUT</button>
                             </div>
                         </div>
                     ) : (
@@ -72,7 +75,6 @@ const Cart = () => {
                         </>
                     )
                 }
-
             </div>
         </>
     )

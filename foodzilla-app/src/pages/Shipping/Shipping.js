@@ -6,8 +6,9 @@ import AddressModal from '../../components/AddressModal'
 import '../../styles/shipping.css'
 import SideBar from '../../components/SideBar'
 import { deleteAddress, getAdress, selectAddress, updateAddress } from '../../actions/address';
-const Shipping = () => {
+import HeaderLogo from '../../components/HeaderLogo'
 
+const Shipping = () => {
     const cartItems = useSelector(state => state.cart.cartItems)
     const allAdress = useSelector(state => state.address.addressItems)
     const dispatch = useDispatch()
@@ -16,19 +17,18 @@ const Shipping = () => {
     const deleviryPrice = (cartPrice > 500 || cartPrice === 0) ? 0 : 50
     const discount = 0;
     const totalPrice = (cartPrice + deleviryPrice) - discount;
-    // const auth = useSelector(state=>state.user.user)
     const location = useLocation();
     const path = location.pathname
     const navigate = useNavigate()
     const [show, setShow] = useState(false)
     const [selected, setSelected] = useState(0)
     const [addressToEdit, setAddressToEdit] = useState()
+
     useEffect(() => {
         if (!user) {
             navigate('/signin')
         }
     }, [])
-
 
     useEffect(() => {
         if (user) {
@@ -55,6 +55,7 @@ const Shipping = () => {
     return (
         <>
             <SideBar />
+            <HeaderLogo title="Shipping"/>
             <div className='shipping'>
                 <div className="progress">
                     <div className="status">
@@ -115,7 +116,6 @@ const Shipping = () => {
                                 <h3><span>$</span>{totalPrice}</h3>
                             </div>
                         </div>
-
                         <button onClick={proceedToPayment} disabled={totalPrice === 0 ? true : false}>PROCEED TO PAYMENT</button>
                     </div>
                 </div>

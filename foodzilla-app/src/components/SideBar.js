@@ -1,19 +1,19 @@
 import React ,{useState}from 'react'
 import '../styles/sidebar.css'
-import {FaHome,FaBoxOpen,FaPizzaSlice,FaTimes} from 'react-icons/fa'
-import {BsHeartHalf,BsGear} from 'react-icons/bs'
+import {FaHome,FaTimes} from 'react-icons/fa'
+import {BsGear} from 'react-icons/bs'
 import {MdOutlineFoodBank} from 'react-icons/md'
 import {CgFileDocument, CgFeed} from 'react-icons/cg'
 import { Link,useLocation } from 'react-router-dom'
 import {FiLogOut} from 'react-icons/fi'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../actions/auth'
-// import { showSideBar } from '../actions'
+import { showSideBar } from '../actions'
+
 const SideBar = () => {
        const dispatch =useDispatch()
        const user = useSelector(state=>state.user.user)
-       //const show =useSelector(state=>state.sidebar.show)
-       const [show, showSideBar] = useState(useSelector(state=>state.sidebar.show))
+       const show =useSelector(state=>state.sidebar.show)
        const location =useLocation()
        const path =location.pathname
 
