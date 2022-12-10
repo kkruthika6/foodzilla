@@ -970,3 +970,8 @@ CastError: Cast to ObjectId failed for value "getAll" (type string) at path "_id
     at model.Query.exec (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/node_modules/mongoose/lib/query.js:4897:21)
     at Query.then (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/node_modules/mongoose/lib/query.js:4996:15)
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ValidationError: Address validation failed: name: Path `name` is required., mobNo: Path `mobNo` is required., pinCode: Path `pinCode` is required., address: Path `address` is required., town: Path `town` is required., state: Path `state` is required., city: Path `city` is required.
+    at Document.invalidate (/Users/harshinivc/Desktop/WebDesign/WebDesignFinal/foodzilla/foodzilla-ws/node_modules/mongoose/lib/document.js:3123:32)
+    at /Users/harshinivc/Desktop/WebDesign/WebDesignFinal/foodzilla/foodzilla-ws/node_modules/mongoose/lib/document.js:2911:17
+    at /Users/harshinivc/Desktop/WebDesign/WebDesignFinal/foodzilla/foodzilla-ws/node_modules/mongoose/lib/schematype.js:1349:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)

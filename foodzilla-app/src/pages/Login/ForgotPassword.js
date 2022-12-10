@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../../styles/auth.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -33,9 +33,6 @@ const Signup = () => {
         setLoading(true)
     }
 
-    useEffect(() => {
-        console.log(responseMsg);
-    }, [responseMsg])
 
     return (
         <div className='auth'>
