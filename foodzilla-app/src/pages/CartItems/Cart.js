@@ -12,7 +12,7 @@ import HeaderLogo from '../../components/HeaderLogo'
 const Cart = () => {
     const cartItems = useSelector(state => state.cart.cartItems)
     const cartPrice = cartItems.reduce((total, itm) => total + itm?.price * itm?.qty, 0)
-    const deleviryPrice = (cartPrice > 500 || cartPrice === 0) ? 0 : 50
+    const deleviryPrice = (cartPrice > 100 || cartPrice === 0) ? 0 : 5
     const discount = 0;
     const totalPrice = (cartPrice + deleviryPrice) - discount;
     const auth = useSelector(state => state.user.user)

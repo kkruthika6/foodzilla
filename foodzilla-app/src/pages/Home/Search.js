@@ -38,7 +38,7 @@ const Search = () => {
               data?.length !== 0 ? <ProductCard product={data ? data : []} /> : <h3>No results found!</h3>}
             <Message showModal={show}
               msg={"Oops! Something went wrong"}
-              img={"https://image.flaticon.com/icons/png/512/835/835408.png"}
+              //img={"https://image.flaticon.com/icons/png/512/835/835408.png"}
               type="error"
               closeModal={setShow}
             />

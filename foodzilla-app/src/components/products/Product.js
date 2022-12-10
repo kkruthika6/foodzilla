@@ -24,7 +24,7 @@ const Product = ({category}) => {
           ):<ProductCard product={data}/>}
           <Message showModal={show}
           msg={"Opps!,Something went wrong"}
-          img={"https://image.flaticon.com/icons/png/512/835/835408.png"}
+          //img={"https://image.flaticon.com/icons/png/512/835/835408.png"}
           type="error"
           closeModal={setShow}
           />  
