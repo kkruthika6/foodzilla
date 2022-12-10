@@ -20,7 +20,8 @@ const Payment = () => {
   const handlePlaceOrder = async () => {
     if (paymentType === "stripe") {
       const data = await foodzilla.get(`/api/products/payment/${totalPrice}`);
-      window.location.replace(data.data);
+      window.open(data.data, '_blank');
+      navigate('/order')
     } else {
       navigate('/order')
     }

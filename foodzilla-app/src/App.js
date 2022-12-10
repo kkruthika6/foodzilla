@@ -6,6 +6,8 @@ import Recipes from './pages/Recipes/Recipes';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Signin from './pages/Login/Signin';
 import Signup from './pages/Login/Signup';
+import ForgotPassword from './pages/Login/ForgotPassword';
+import ResetPassword from './pages/Login/ResetPassword';
 import Cart from './pages/CartItems/Cart';
 import Search from './pages/Home/Search';
 import Address from './pages/Address/Address';
@@ -25,6 +27,8 @@ function App() {
             <Route path='/' element={<Home />}></Route>
             <Route path='/signin' element={<Signin />}></Route>
             <Route path='/signup' element={<Signup />}></Route>
+            <Route path='/forgotPassword' element={<ForgotPassword />}></Route>
+            <Route path='/password-reset/:id/:token' element={<ResetPassword />}></Route>
             <Route path="/search" element={<Search/>}/>
             <Route path="/your-address" element={<Address/>}/>
             <Route path='/recipes' element={<Recipes />}></Route>
