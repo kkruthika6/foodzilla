@@ -7,7 +7,7 @@
     margin: 15px 10px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 10px;
     border-radius: 12px;
 }

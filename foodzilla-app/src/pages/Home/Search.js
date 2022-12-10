@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import SkeletonArticle from '../../skeleton/SkeletonArticle';
 import { searchProducts } from '../../actions';
+import '../../styles/search.css';
 
 const Search = () => {
   const error = useSelector(state => state.search?.error)
@@ -23,7 +24,7 @@ const Search = () => {
   }, [query])
 
   return (
-    <>
+    <div className='search'>
       <SideBar />
       <div className='mainarea  main-search'>
         <Header />
@@ -45,7 +46,7 @@ const Search = () => {
         </div>
       </div>
       <LeftSide />
-    </>
+    </div>
   );
 };
 

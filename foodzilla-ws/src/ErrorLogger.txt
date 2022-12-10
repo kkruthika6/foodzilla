@@ -962,3 +962,11 @@ ReferenceError: jwt is not defined
     at next (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:280:10)
     at Function.handle (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:175:3)
     at router (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/node_modules/express/lib/router/index.js:47:12)
+CastError: Cast to ObjectId failed for value "getAll" (type string) at path "_id" for model "Product"
+    at model.Query.exec (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/node_modules/mongoose/lib/query.js:4897:21)
+    at Query.then (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/node_modules/mongoose/lib/query.js:4996:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+CastError: Cast to ObjectId failed for value "getAll" (type string) at path "_id" for model "Product"
+    at model.Query.exec (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/node_modules/mongoose/lib/query.js:4897:21)
+    at Query.then (/Users/pavansomashekar/Desktop/Web Final Project/foodzilla/foodzilla-ws/node_modules/mongoose/lib/query.js:4996:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

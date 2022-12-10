@@ -114,7 +114,7 @@ const Profile = () => {
 
                 <div className="mainarea admin-items">
                     <h1 style={{ color: "rgb(17, 43, 76", textAlign: "center", marginTop: "0px" }}>Add Product</h1>
-                    <div className="admin-item" style={{ width: "25em", marginLeft: "auto", marginRight: "auto", marginTop: "20px" }}>
+                    <div className="admin-item" style={{ width: "25em", marginLeft: "auto", marginRight: "auto", marginTop: "20px", justifyContent: "space-evenly" }}>
                         <form onSubmit={e => handleSubmit(e)}>
                             <div className="profile-input">
                                 Name: <input type="text" id='name' name='name' required value={name} onChange={e => setName(e.target.value)} />

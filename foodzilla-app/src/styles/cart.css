@@ -34,8 +34,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  height: 160px;
-  margin: 0px 0;
+  height: 170px;
+  margin: 20px 0;
   background: #fff;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
 }
