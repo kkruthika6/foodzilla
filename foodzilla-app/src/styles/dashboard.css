@@ -166,8 +166,23 @@ a:link {
   }
 
   @media screen and (max-width: 1104px){
+    .container {
+      margin-left: 50px;
+    }
     h2{
       margin-left: 0px;
+    }
+    .send{
+      display: block;
+    }
+    .send input {
+      width: 200px;
+    }
+    .feed {
+      height: 500px;
+    }
+    .container {
+      height: 800px;
     }
   }
 

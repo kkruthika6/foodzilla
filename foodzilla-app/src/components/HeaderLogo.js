@@ -10,9 +10,9 @@ function HeaderLogo(props) {
 
     const dispatch = useDispatch()
     return (
-        <div className='logoheader'>
-            <div className="foodzillalogo">
-                <div className="responsive" onClick={() => dispatch(showSideBar(true))}>
+        <div className='header'>
+            <div className="logo">
+                <div className="burger" onClick={() => dispatch(showSideBar(true))}>
                     <HiMenuAlt1 />
                 </div>
                 <Link to="/"><img src={logo} alt="logo" /></Link>

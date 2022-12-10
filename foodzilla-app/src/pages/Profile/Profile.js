@@ -57,7 +57,7 @@ const Profile = () => {
             </>
           ) : (
             <div>
-              <h1>You are not Logged In!,Please Login</h1>
+              <h1>You are not Logged In! Please Login</h1>
               <Link to="/signin"><button>Login</button></Link>
             </div>
           )

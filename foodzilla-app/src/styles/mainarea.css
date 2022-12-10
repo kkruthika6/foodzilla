@@ -19,7 +19,9 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  margin-left: 100px;
+  margin-top: 15px;
 }
 .header .input {
   display: flex;
@@ -29,6 +31,7 @@
   width: 300px;
   border-radius: 30px;
   padding: 0px 20px;
+  margin-left: 300px;
 }
 button {
   background: rgb(17, 43, 76);
@@ -300,6 +303,7 @@ button:active,
   }
   .header .input {
     width: 100%;
+    margin-left: 0px;
   }
 }
 
@@ -340,5 +344,9 @@ button:active,
     flex-direction: column;
     height: auto;
     align-items: flex-start;
+    margin-left: 0px;
+  }
+  .header h2 {
+    margin-left: 50px;
   }
 }

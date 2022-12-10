@@ -10,7 +10,7 @@ const LeftSide = ({ data, show }) => {
 
     return (
         <div className='leftside'>
-            <div className="header">
+            <div className="leftHeader">
                 <div className="user-info">
                     {
                         user?.user ? (
