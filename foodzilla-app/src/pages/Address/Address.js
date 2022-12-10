@@ -5,11 +5,7 @@ import { deleteAddress } from '../../actions/address';
 import { RiAddFill } from 'react-icons/ri'
 import { getAdress } from '../../actions/address';
 import AddressModal from '../../components/AddressModal';
-import { Link } from 'react-router-dom'
-import logo from '../../assets/logo.png'
-import { showSideBar } from '../../actions'
-import { HiMenuAlt1 } from 'react-icons/hi';
-import styles from '../../styles/header.css'
+import HeaderLogo from '../../components/HeaderLogo';
 
 const Address = () => {
     const allAdress = useSelector(state => state.address.addressItems)
@@ -17,31 +13,26 @@ const Address = () => {
     const [addressToEdit, setAddressToEdit] = useState()
     const [show, setShow] = useState(false)
     const dispatch = useDispatch()
+
     const delteAddress = (id) => {
         dispatch(deleteAddress(id))
     }
+
     const handleUpdateAddress = (address) => {
         setAddressToEdit(address)
         setShow(true)
     }
+
     useEffect(()=>{
         if(user){
             dispatch(getAdress(user._id))
         }
     }, [])
+    
     return (
         <>
             <SideBar />
-                <div className='logoheader'>
-                    <div className="foodzillalogo">
-                        <div className="responsive" onClick={() => dispatch(showSideBar(true))}>
-                            <HiMenuAlt1 />
-                        </div>
-
-                        <Link to="/"><img src={logo} alt="logo" /></Link>
-                    </div>
-                    <h2>Address</h2>
-                </div>
+                <HeaderLogo title="Address"/>
                 <div className="address">
                     <div className="add-sec-area">
                         {

@@ -1,12 +1,15 @@
 @import "./vars.css";
 .shipping {
   background: rgb(241, 241, 241);
-  width: 100%;
+  width: 80%;
   padding-bottom: 3rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .shipping-details {
   display: flex;
@@ -32,7 +35,7 @@
   background-color: white;
   border-radius: 3;
   height: 500px;
-  margin-top: 100px;
+  margin-top: 50px;
   padding-top: 30px;
 }
 .ordersuccess-card img{
@@ -208,6 +211,14 @@
 .shipping .billing {
   margin-bottom: 20px;
 }
+
+.pay{
+  width:20px;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+
+
 .razorpay {
   width: 400px;
   padding: 8px 0px;
@@ -224,4 +235,90 @@
   width: 30px;
   height: 30px;
   margin-right: 20px;
+}
+
+.checkout-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.checkout-area button {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px !important;
+  margin-left: 40px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 4px var(--primary);
+}
+
+
+.billing {
+  padding: 30px;
+  background: #fff;
+  width: 300px;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+  border-radius: 6px;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+.billing h4 {
+  color: var(--text-gary);
+  width: 100%;
+  border-bottom: 1px dotted var(--text-gary);
+  padding-bottom: 20px;
+}
+.billing span {
+  color: var(--primary);
+}
+.billing .details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.billing .details .item,
+.total {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total {
+  color: rgb(100, 100, 100);
+  margin-top: 20px;
+  border-top: 1px dotted var(--text-gary);
+}
+.billing .details .item p {
+  color: rgb(87, 86, 86) !important;
+  font-size: 17px;
+}
+
+
+
+
+@media (max-width: 1104px) {
+  
+ 
+  .checkout-area{
+    display: block;
+  }
+  .billing{
+    width:180%;
+    margin-left: 20px;
+    display: block;
+  }
+  .shipping-details{
+    display: block;
+  }
+  
+  .checkout-area button{
+    
+    width: 140px;
+  }
+  
+  
+  
 }

@@ -14,7 +14,7 @@ import Admin from './pages/Admin/Admin';
 import AddProduct from './pages/Admin/AddProduct';
 import Shipping from './pages/Shipping/Shipping';
 import Payment from './pages/Payment/Payment';
-import OrderSuccessful from './pages/OrderSuccessful';
+import OrderSuccessful from './pages/Shipping/OrderSuccessful';
 
 function App() {
   return (

@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import {Link} from 'react-router-dom'
-import logo from '../../assets/logo.png'
-import {useDispatch} from 'react-redux'
-import { showSideBar } from '../../actions'
-import {HiMenuAlt1} from 'react-icons/hi'
-import './Recipes.css'
+import '../../styles/recipes.css'
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
 import SideBar from '../../components/SideBar';
 import "bootstrap/dist/css/bootstrap.min.css";
+import HeaderLogo from '../../components/HeaderLogo';
 
 function Recipes() {
     const [data, setData] = useState([]);
     const [flag, setFlag] = useState(false);
-    const dispatch =useDispatch()
     if (flag === false) {
         const options = {
             method: 'GET',
@@ -37,18 +32,7 @@ function Recipes() {
     return (
         <>
             <SideBar />
-            <div className='top'>
-            <div className="foodlogo">
-              <div className="mob" onClick={()=>dispatch(showSideBar(true))}>
-               <HiMenuAlt1/>
-              </div>
-              
-              <Link to="/"><img src={logo} alt="logo" /></Link>
-            </div>
-            <h2>Tasty Recipes</h2>
-            </div>
-            <br />
-            
+            <HeaderLogo title="Tasty Recipes" />
             <div className='recipefeed'>
                 {flag === false ? <div className='loader'><Spinner animation="border" variant="dark" /></div> :
                     data !== undefined && data.length !== 0 ?
@@ -67,7 +51,7 @@ function Recipes() {
                                                                     {r.name}<br />
                                                                     {r.description}
                                                                     <br />
-                                                                    <img src={r.thumbnail_url} alt={r.thumbnail_alt_text} width="500px" height="300px" className='foodimg'/>
+                                                                    <img src={r.thumbnail_url} alt={r.thumbnail_alt_text} width="500px" height="300px" className='foodimg' />
                                                                     <br />
                                                                     {r.prep_time_minutes ? "Preparation time:" + r.prep_time_minutes : null}
                                                                     <br />
@@ -84,7 +68,7 @@ function Recipes() {
                                                         ) : (<>
                                                             {d.description}
                                                             <br />
-                                                            <img src={d.thumbnail_url} alt={d.thumbnail_alt_text} width="500px" height="300px" className='foodimg'/>
+                                                            <img src={d.thumbnail_url} alt={d.thumbnail_alt_text} width="500px" height="300px" className='foodimg' />
                                                             <br />
                                                             {d.prep_time_minutes ? "Preparation time:" + d.prep_time_minutes : null}
                                                             <br />

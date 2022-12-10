@@ -64,8 +64,9 @@ margin-top: -13in;
   width: 50px;
 }
 .all-items.side-cart .cart-card {
-  height: 100px;
+  height: 110px;
   padding: 10px;
+  margin: 10px;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.151);
 }
 .side-cart-area {
@@ -73,7 +74,6 @@ margin-top: -13in;
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
-  
   flex-direction: column;
 }
 .side-cart-area .text {
