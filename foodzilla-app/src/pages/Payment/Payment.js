@@ -56,11 +56,11 @@ const Payment = () => {
    <div className="payments-opts">
      <div className="payment-method">
        <div className='select-opt' onClick={()=>setPaymentType("COD")}>
-         <input  type="radio" value="COD" name="payment" id="cod" checked />
+         <input  type="radio" value="COD" name="payment" className='pay' id="cod" checked />
          <label htmlFor="cod">CASH ON DELIVERY</label>
        </div>
        <div className='select-opt' onClick={()=>setPaymentType("stripe")}>
-         <input  type="radio" value="paypal" name="payment" id="paypal" />
+         <input  type="radio" value="paypal" name="payment" className='pay' id="paypal" />
          <label htmlFor="paypal">STRIPE</label>
        </div>
        

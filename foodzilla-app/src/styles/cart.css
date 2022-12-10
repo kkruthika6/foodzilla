@@ -105,31 +105,31 @@
   font-size: 13px;
   color: var(--primary);
 }
-.billing {
+.bill {
   padding: 30px;
   background: #fff;
-  width: 400px;
+  width: 300px;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
   border-radius: 6px;
   margin-top: 20px;
   margin-left: 40px;
 }
-.billing h4 {
+.bill h4 {
   color: var(--text-gary);
   width: 100%;
   border-bottom: 1px dotted var(--text-gary);
   padding-bottom: 20px;
 }
-.billing span {
+.bill span {
   color: var(--primary);
 }
-.billing .details {
+.bill .details {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.billing .details .item,
+.bill .details .item,
 .total {
   width: 100%;
   display: flex;
@@ -141,18 +141,18 @@
   margin-top: 20px;
   border-top: 1px dotted var(--text-gary);
 }
-.billing .details .item p {
+.bill .details .item p {
   color: rgb(87, 86, 86) !important;
   font-size: 17px;
 }
-.checkout-area {
+.checkoutarea {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.checkout-area button {
-  width: 400px;
+.checkoutarea button {
+  width: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -165,4 +165,91 @@
   color: #388e3c !important;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+.allitems.cart-card{
+  height: 400px;
+  
+}
+
+
+
+.cartarea {
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* flex-direction: column; */
+}
+.cartarea .cart-card {
+  padding: 20px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 160px;
+  margin: 20px 0;
+  background: #fff;
+  box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+  width:100%;
+}
+.cartarea .cart-card .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: rgba(17, 43, 61, 1);
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+
+.allitems h2 {
+  font-size: 15px;
+}
+.allitems h3 {
+  font-size: 15px;
+}
+.allitems .img img {
+  height: 50px;
+  width: 50px;
+  
+  
+}
+.allitems .cart-card {
+  height: 120px;
+  padding: 10px;
+  width: 350px;
+  
+  
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.151);
+}
+
+
+@media (max-width: 1104px) {
+  .cart-screen {
+    display: block;
+    width: 60%;
+    margin-left: -20px; 
+  }
+  .cartarea {
+    padding: 20px;
+    display: block;
+    /* align-items: flex-start; */
+    /* justify-content: flex-start; */
+    /* flex-direction: column; */
+  }
+  .bill{
+    width:180%;
+    margin-left: 150px;
+  }
+  .checkoutarea button {
+    width : 300px;
+    margin-left: 150px;
+  }
+
+
+  
+  
 }
