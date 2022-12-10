@@ -39,11 +39,6 @@ const Signin = () => {
 
     const submitHandler = (data) => {
         dispatch(siginUser(data.email, data.password))
-        console.log(data.email, data.password)
-        setLoading(true)
-    }
-
-    useEffect(() => {
         if (userInfo) {
             if (userInfo.isAdmin) {
                 navigate("/admin")
@@ -52,7 +47,8 @@ const Signin = () => {
                 navigate(redirect)
             }
         }
-    }, [userInfo])
+        setLoading(true)
+    }
 
     return (
         <div className='auth'>
@@ -69,7 +65,7 @@ const Signin = () => {
                     <input type="password" name="password" id="" placeholder='Password' {...register('password', { required: true })} />
                     {errors?.password?.message && <p className="err">{errors?.password?.message}</p>}
                     <div className="text">
-                        <Link to="/updatepassword">  <p>Forgot Password?</p></Link>
+                        <Link to="/forgotPassword">  <p>Forgot Password?</p></Link>
                     </div>
                     <button type="submit">{user?.loading ? <Spinner /> : 'Login'}</button>
                 </form>

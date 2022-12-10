@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import cartReducer from "./cartReducer";
 import pizzaReducer from "./pizzaReducers";
-import {signInReducer,signUpReducer} from './authReducer'
+import {forgotPasswordReducer, signInReducer,signUpReducer, resetPasswordReducer} from './authReducer'
 import { addressReducer } from "./addressReducer";
 import { orderReducer,orderDetail, searchItems } from "./odersReducer";
 import { sidebarReducer } from "./sidebarreducer";
@@ -16,5 +16,7 @@ export default combineReducers({
     order:orderReducer,
     orderDetails:orderDetail,
     search:searchItems,
-    sidebar:sidebarReducer
+    sidebar:sidebarReducer,
+    forgotPasswordlink: forgotPasswordReducer,
+    resetUserPassword: resetPasswordReducer
 })
