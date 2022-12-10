@@ -34,15 +34,15 @@ const Cart = () => {
             <div className='cart-screen'>
                 {
                     cartItems?.length > 0 ? (
-                        <div className='cart-area'>
-                            <div className="all-items">
+                        <div className='cartarea'>
+                            <div className="allitems">
                                 {cartItems.map((item) => (
                                     <CartItemCard key={item.product} item={item} />
                                 ))}
                             </div>
-                            <div className="checkout-area">
+                            <div className="checkoutarea">
 
-                                <div className="billing">
+                                <div className="bill">
                                     <h4>PRICE DETAILS</h4>
                                     <div className="details">
                                         <div className="item">
